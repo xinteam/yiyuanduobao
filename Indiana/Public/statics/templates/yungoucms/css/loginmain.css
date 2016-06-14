@@ -1,0 +1,504 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari */
+}
+
+html, body, .wraper, .container, .main, .page, .page .page-con, .mark-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.hero p, .hero h2, .leader .leader-txt1, .leader .leader-txt2, .skill li, .page-txt h2, .page-txt p, .last-mark h1 {
+    font-size: 0;
+    text-indent: -99999em;
+    overflow: hidden;
+}
+
+section, article, nav, aside, footer, header, div, p, ul, li, input, textarea {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.loading, .popup, .skill, .md-soft, .md-soft li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei";
+}
+
+.main, .ani {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, ul, ol form, figure, figcaption {
+    margin: 0px;
+}
+
+/* 改变盒子模型 */
+section, article, nav, aside, footer, header, div, p, ul, li, input, textarea {
+    display: block;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+}
+
+html, body {
+    -webkit-user-select: none;
+    /* 禁止选中文本 */
+    user-select: none;
+    -webkit-text-size-adjust: 100%;
+    /* iphone禁用文字大小调整 */
+    -ms-text-size-adjust: 100%;
+}
+
+html {
+    font-size: 625%;
+}
+
+body {
+    font: 0.16rem/1.6 "Helvetica Neue", "Microsoft YaHei";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+/* 清除点击虚拟框 */
+a, div, p, span, ul, li, i, img, input {
+    outline: 0;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus {
+    outline: 0;
+}
+
+a:link, a:visited {
+    color: #281204;
+    text-decoration: none;
+}
+
+a img {
+    border: 0 none;
+}
+
+a, img {
+    -webkit-touch-callout: none;
+    /* 禁止长按链接与图片弹出菜单 */
+}
+
+img {
+    width: 100%;
+}
+
+input, textarea, select {
+    outline: none;
+    color: #333;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, Microsoft YaHei, sans-serif, Microsoft JhengHei, Arial;
+}
+
+/* 清除浮动 */
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    display: block;
+    content: "\200B";
+    clear: both;
+    height: 0;
+}
+
+.login_layout:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+/*注册进度*/
+.login_layout {
+    width: 100%;
+    zoom: 1;
+}
+
+.login_process li.login_arrow, .login_process li b, .login_process li.login_processCur b, .login_ConInput dl dd .tips_txt_yes s, .login_ConInput dl dd .tips_txt_Wrong s, .Mem_orangebut, .login_CMobile_Complete dl dd .tips_txt_Wrong s {
+    background: url("../images/login_new.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/login_new.png*/) no-repeat;
+}
+
+.login_box {
+    width: 100%;
+    height: 51px;
+    padding: 13px 20px 0 20px;
+    background: #F5F5F5;
+}
+
+.login_title {
+    width: 980px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.login_title h2 {
+    float: left;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    padding-top: 2px;
+    margin-right: 25px;
+}
+
+.login_title span {
+    float: right;
+    font-size: 14px;
+    margin-right: 10%;
+}
+
+.login_title span a {
+    color: #22aaff;
+}
+
+.login_process, .login_process li {
+    float: left;
+    color: #676767;
+}
+
+.login_process li b, .login_process li.login_processCur b {
+    width: 17px;
+    height: 18px;
+    margin-right: 5px;
+    text-align: center;
+    color: #fff;
+    line-height: 18px;
+    font-family: Arial;
+    display: inline-block;
+}
+
+.login_process li b {
+    background-position: -19px 0;
+}
+
+.login_process li.login_processCur b {
+    background-position: 0 0;
+}
+
+.login_process li.login_processCur {
+    color: #db3652;
+}
+
+.login_process li.login_arrow {
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    width: 9px;
+    height: 11px;
+    background-position: -39px 0;
+    margin: 4px 15px 0 20px;
+}
+
+.login_ConInput {
+    width: 100%;
+    background-color: #f92234;
+    overflow: hidden;
+}
+
+.login_img {
+    width: 50%;
+    float: left;
+    display: inline-block;
+    background-size: 100%;
+}
+
+.login_img img {
+    max-width: 90%;
+    display: inline-block;
+    float: right;
+}
+
+.login_from {
+    width: 50%;
+    padding: 15px 0 30px 0;
+    display: inline-block;
+    position: relative;
+}
+
+.bottom-bow {
+    width: 380px;
+    height: 20px;
+    display: block;
+    margin-left: 10%;
+    background: url("../images/bottom-shade.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/bottom-shade.png*/) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 10px;
+    left: -10px;
+    opacity: 0.8;
+}
+
+/*注册表单*/
+#form-01 {
+    width: 360px;
+    margin-left: 30%;
+    height: 520px;
+    padding: 20px 20px;
+    background-color: #fff;
+}
+
+#form-01 ul {
+    width: 100%;
+    display: block;
+}
+
+#form-01 li {
+    width: 100%;
+    height: 40px;
+    padding-left: 80px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#form-01 li:nth-child(2) {
+    margin-bottom: 60px;
+}
+
+#password {
+    width: 100%;
+    height: 22px;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    padding-left: 80px;
+}
+
+#password > li:nth-child(1) {
+    width: 80px;
+    color: #f27f02;
+}
+
+#password > li {
+    float: left;
+    height: 20px;
+    padding-left: 0;
+    font-size: 14px;
+}
+
+#password > li:nth-child(1) {
+    text-align: center;
+    line-height: 20px;
+}
+
+#password > li:nth-child(n+2) {
+    width: 40px;
+    margin-left: 2px;
+    text-align: center;
+    line-height: 20px;
+    background-color: #d0d0d0;
+    font-size: 13px;
+}
+
+#form-01 li label {
+    display: inline-block;
+    line-height: 36px;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    color: #666;
+}
+
+#form-01 li input {
+    width: 100%;
+    border-radius: 0;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #b6b6b6;
+    padding-left: 5px;
+    -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, .2);
+    -moz-box-shadow: inset 0 1px 5px rgba(0, 0, 0, .2);
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, .2);
+}
+
+#form-01 li:nth-child(4) input {
+    width: 55%;
+    float: left;
+    padding-left: 5px;
+}
+
+#form-01 li:nth-child(4) a {
+    width: 40%;
+    height: 40px;
+    display: inline-block;
+    margin-left: 5%;
+    background: url("../images/down.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/down.png*/) no-repeat center;
+    background-size: 90%;
+}
+
+#btn {
+    width: 100%;
+}
+
+#btn input {
+    width: 15px;
+    height: 15px;
+    font-size: 14px;
+    display: inline-block;
+    float: left;
+    margin-left: 80px;
+}
+
+#btn p {
+    font-size: 12px;
+    color: #666;
+    line-height: 14px;
+    margin-left: 80px;
+}
+
+#btn a {
+    color: #22aafe;
+}
+
+#btn button {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #db3650;
+    margin-top: 10px;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+}
+
+#btn dl {
+    text-align: center;
+}
+
+#btn dd {
+    color: #666;
+    font-size: 16px;
+    line-height: 36px;
+    padding-top: 5px;
+}
+
+.qq {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    border-radius: 50%;
+    background: url("../images/qq.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/qq.png*/) no-repeat;
+    background-size: 100% 100%;
+}
+
+/*验证码页面*/
+#form-02 {
+    width: 427px;
+    /*  margin-left: 10%;*/
+    margin: auto;
+    height: 510px;
+    padding: 20px 15px;
+    background-color: #fff;
+    display: none;
+}
+
+#form-02 > p {
+    font-size: 14px;
+    color: #666;
+    text-indent: 2em;
+}
+
+#form-02 > p > a {
+    color: #ff5400;
+}
+
+#form-02 ul {
+    width: 80%;
+    padding-top: 20px;
+    margin-left: 10%;
+    text-align: center;
+}
+
+#form-02 ul li {
+    width: 100%;
+    height: 40px;
+    color: #333;
+}
+
+#form-02 ul li:nth-child(n+2) {
+    margin-bottom: 10px;
+}
+
+#form-02 ul input {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+#form-02 ul button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #db3650;
+}
+
+#form-02 dl {
+    width: 100%;
+    padding-top: 3px;
+    font-size: 18px;
+    border-top: #dbdbdb solid 1px;
+}
+
+#form-02 dl h3 {
+    color: #333;
+    line-height: 50px;
+    font-weight: 550;
+}
+
+#form-02 dl dt {
+    font-size: 14px;
+    color: #999;
+    display: block;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+#form-02 dl dt > span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#send_code {
+    width: 90px;
+    height: 25px;
+    line-height: 22px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+#form-02 dt a {
+    color: #0fa3ff;
+}

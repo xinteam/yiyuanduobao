@@ -1,0 +1,310 @@
+.clearfloat {
+	clear: both;
+	height: 0px;
+	font-size: 1px;
+	line-height: 0px;
+}
+/*心愿单内容区样式*/
+.x_content {
+	width: 1190px;
+	height: auto;
+	margin: auto;
+	
+}
+
+.x_content .x_topimg {
+	width: 1190px;
+	height: 320px;
+	overflow: hidden;
+	margin-top:10px;
+}
+
+.x_content .x_topimg img {
+	width: 1190px;
+	height: 320px;
+}
+
+/*心愿单产品列表标题*/
+.x_content .x_list_title {
+	width: 1190px;
+	height: 48px;
+}
+
+.x_content .x_list_title h2 {
+	width: 1190px;
+	height: 48px;
+	font-family: "微软雅黑";
+	font-size: 22px;
+	line-height: 48px;
+	font-weight: normal;
+	color: #db3652;
+}
+
+/*心愿单产品列表样式*/
+.x_content .big_p {
+	float: left;
+	width: 1191px;
+	position: relative;
+	overflow: hidden;
+}
+
+.x_content .big_p .u_l {
+	height: 1364px;
+	float: left;
+	position: relative;
+}
+
+.x_content .x_list {
+	width: 1190px;
+	border-bottom: 1px #ddd solid;
+	border-right: 1px #ddd solid;
+	float: left;
+	height: 1363px;
+}
+
+.x_content .x_list .x_products {
+	width: 237px;
+	height: 340px;
+	border-top: #ddd 1px solid;
+	border-left: #ddd 1px solid;
+	float: left;
+}
+
+.x_content .x_list .x_products .x_pro {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+/*左右切换按钮*/
+.x_content .big_p .right-next, .x_content .big_p .left-prev {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -38px;
+	width: 30px;
+	height: 70px;
+	background: #db3652;
+	display: block;
+	font-size: 30px;
+	color: #FFF;
+	font-family: "微软雅黑";
+	line-height: 70px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.left-prev {
+	left: 0
+}
+
+.x_content .big_p .right-next:hover, .x_content .big_p .left-prev:hover{
+	background: rgba(238, 69, 98, 0.73);
+}
+/* 产品名称图片 */
+.x_content .x_list .x_products .x_pro .p_img {
+	padding: 15px;
+}
+
+.x_content .x_list .x_products .x_pro .p_img img {
+	width: 207px;
+	height: 192px;
+	vertical-align: middle;
+}
+/* 产品名称 */
+.x_content .x_list .x_products .x_pro .p_name {
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0 15px;
+}
+
+.x_content .x_list .x_products .x_pro .p_name a {
+	font-family: "微软雅黑";
+	font-size: 15px;
+	color: #535353;
+}
+/* 进度条 */
+.x_content .x_list .x_products .x_pro .x_progress {
+	width: 208px;
+	height: 6px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.x_content .x_list .x_products .x_pro .x_progress .p_progress {
+	width: 208px;
+	height: 6px;
+	overflow: hidden;
+	background: #ddd;
+}
+
+.x_content .x_list .x_products .x_pro .x_progress .p_progress b {
+	display: block;
+	height: 6px;
+	background: -webkit-gradient(linear, 0% 0, 100% 0, from(#FF7070),
+		to(#FF0101));
+	background: -ms-linear-gradient(left, #FF7070 0, #FF0101 100%);
+	background: -o-linear-gradient(0deg, #FF7070, #FF0101);
+}
+/*want*/
+.x_content .x_list .x_products .x_pro .x_want {
+	height: 35px;
+	margin-top: 15px;
+	padding: 0px 41px;
+}
+
+.x_content .x_list .x_products .x_pro .x_want .x_w {
+	height: 35px;
+	border-radius: 5px;
+	margin: auto;
+	text-align: center;
+	line-height: 35px;
+	font-size: 13px;
+	font-family: "微软雅黑";
+	color: #db3652;
+	border: 1px solid #db3652;
+	cursor: pointer;
+}
+
+.x_content .x_list .x_products .x_pro .x_want .x_w i {
+	width: 21px;
+	height: 21px;
+	display: inline-block;
+	vertical-align: middle;
+	font-style: normal;
+	background: url("../images/sp_png.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/sp_png.png*/) no-repeat;
+	background-position: -297px -112px;
+}
+
+/*添加心愿*/
+.x_content .add_wish {
+	width: 1190px;
+	margin-top: 25px;
+}
+
+.x_content .add_wish .w_content {
+	width: 1190px;
+	float: left;
+}
+
+.x_content .add_wish .w_content textarea {
+	float: left;
+	border-radius: 3px;
+	border: 1px solid #ddd;
+}
+
+.x_content .add_wish .w_content .w_submit {
+	width: 144px;
+	height: 66px;
+	background: #db3652;
+	float: left;
+	line-height: 66px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+.x_content .add_wish .w_content .w_submit a {
+	font-family: "微软雅黑";
+	font-size: 20px;
+	color: #fff;
+}
+
+/*我的心愿单*/
+.x_content .my_wish {
+	width: 1190px;
+	margin-top: 15px;
+}
+
+.x_content .my_w_content {
+	width: 1188px;
+	border: 1px solid #ddd;
+}
+
+.x_content .my_w_content h2 {
+	width: 1188px;
+	height: 44px;
+	background: #fffdd8;
+	text-align: center;
+	line-height: 44px;
+	font-weight: normal;
+	font-size: 16px;
+	color: #333;
+	font-family: "微软雅黑";
+}
+
+.x_content .my_w_content h2 a {
+	font-size: 16px;
+	color: #db3652;
+	font-family: "微软雅黑";
+}
+
+.x_content .my_w_content p {
+	line-height: 30px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #999;
+	padding-left: 25px;
+}
+
+.x_content .my_w_content .w_rule {
+	font-size: 18px;
+    color: #db3652;
+    font-weight: bold;
+}
+.x_content .x_list .x_products .x_pro .x_want .x_w .like-on{
+	background-position: -274px -112px;
+}
+.my_wish .wish_item {
+    border-bottom: #c9caca solid 1px;
+    height: 148px;
+    position: relative;
+}
+.wish_img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    top: 23px;
+    left: 20px;
+}
+.wish_txt {
+    padding: 40px 0 15px 140px;
+}
+.wish_tit {
+	position: absolute;
+	left: 200px;
+    width: 285px;
+    height: 60px;
+    overflow: hidden;
+    font-size: 18px;
+    color: #535353;
+    line-height: 30px;
+}
+.wish_time {
+    color: #535353;
+    position: absolute;
+    left: 880px;
+    top: 60px;
+    font-size: 15px;
+}
+.wish-rule{
+	padding: 10px 0px;
+}
+#wish_promp{
+	position: fixed;
+    left: 50%;
+    top: 40%;
+    padding: 10px 30px;
+    background: rgba(51, 51, 51, 0.58);
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 22;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}

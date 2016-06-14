@@ -1,0 +1,111 @@
+@charset "utf-8";.busCon{width:980px;margin:0 auto}
+.busBanner img{float:left}
+.busJDZ{clear:both;width:980px;margin:39px auto;display:inline-block}
+.busJDZ li{position:relative}
+.busJDZ li a{cursor:pointer}
+.busJDZ .busMar{margin:0 31px}
+.busAbout{width:305px;float:left}
+.busAbout li.busLi{width:305px;position:relative;left:2px;border-top:2px solid #006fb5;z-index:20}
+.busAbout li.busLi b,.busCircuitT b,.busCoreT b{width:127px;height:29px;position:absolute;top:-11px}
+.busAbout li.busLi b{left:-3px}
+.busAbout li.busLi1 b{background:url("../Images/pic_07.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/Images/pic_07.png*/) no-repeat}
+.busAbout li.busLi2 b{background:url("../Images/pic_09.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/Images/pic_09.png*/) no-repeat}
+.busAbout li.busLi3 b{background:url("../Images/pic_11.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/Images/pic_11.png*/) no-repeat}
+.busAbout li.busLi4{width:265px;height:130px;padding:35px 20px;background:#fff;border:1px solid #e6e6e6;border-top:0 none;color:#666;font-size:14px;line-height:25px;position:relative;overflow:hidden}
+.busAbout li.busLi4 p{text-indent:2em}
+.busAbout li.busLi4 a{color:#666;text-decoration:underline}
+.busAbout li.busLi4 span{padding-left:42px}
+.busJDZ li p a{color:#999}
+.busJDZ li a:hover{color:#f60}
+.busCore{clear:both;width:980px;margin:0 auto;background:#fff}
+.busCoreT{width:977px;position:relative;left:2px;border-top:2px solid #006fb5}
+.busCoreT b{background:url("../Images/pic_16.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/Images/pic_16.png*/) no-repeat;left:-4px}
+.busCoreB{width:978px;border:1px solid #e4e4e4;border-top:0 none;padding:10px 0 40px;display:inline-block}
+.busCoreB li{float:left;width:338px;height:88px;border:1px solid #ededed;padding:30px;color:#999;font-size:12px;margin:30px 0 0 60px;line-height:22px;display:inline;overflow:hidden}
+.busCoreB li h3{font-size:20px;color:#333;text-align:center;font-family:"微软雅黑";margin-bottom:12px;display:block}
+.busCoreB li.busCoreB1{background:#fafafa url("../Images/pic_19.jpg"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/Images/pic_19.jpg*/) left top no-repeat}
+.busCoreB li.busCoreB2{background:#fafafa url("../Images/pic_22.jpg"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/Images/pic_22.jpg*/) left top no-repeat}
+.busCoreB li.busCoreB3{background:#fafafa url("../Images/pic_26.jpg"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/Images/pic_26.jpg*/) left top no-repeat}
+.busCoreB li.busCoreB4{background:#fafafa url("../Images/pic_27.jpg"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/Images/pic_27.jpg*/) left top no-repeat}
+.busCircuit{clear:both;width:980px;background:#fff;margin:40px auto}
+.busCircuitT{width:977px;position:relative;left:2px;border-top:2px solid #006fb5}
+.busCircuitT b{background:url("../Images/pic_30.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/Images/pic_30.png*/) no-repeat;left:-4px}
+.busCircuitB{width:978px;border:1px solid #e4e4e4;border-top:0 none;padding:40px 0;display:inline-block}
+.busCircuitB2{width:938px;height:198px;border:1px solid #ededed;background:#fafafa}
+.busCircuitB2 li{float:left;color:#999;font-size:12px;line-height:20px}
+.busCircuitB2 li p{text-align:center;margin-bottom:15px}
+.busCircuitB2 li p img{position:relative;left:-25px}
+.busCircuitB2 li.busCir{width:210px;height:158px;padding:20px 11px 20px 25px;background:url("../Images/pic_34.jpg"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/Images/pic_34.jpg*/) right top no-repeat}
+.busCircuitB2 li.busCir3{width:160px}
+.busCircuitB2 li.busCir4{width:160px;background:0 0}
+.busCircuitB2 h4{font-size:18px;color:#333;display:block;margin-bottom:8px;font-family:"微软雅黑"}
+.yBanner-cont{position:relative;width:1190px;height:440px;margin:auto}
+.yBannerListInRight{position:absolute;top:43px;right:0;width:240px;height:440px;z-index:5}
+.yBannerListInRight img{background:#fff;vertical-align:top;-webkit-transition:-webkit-transform .2s linear;-moz-transition:-moz-transform .2s linear;-o-transition:-o-transform .2s linear;transition:transform .2s linear}
+.yBannerListInRight img:hover{-webkit-transform:translateX(-5px);-moz-transform:translateX(-5px);-ms-transform:translateX(-5px);-o-transform:translateX(-5px);transform:translateX(-5px)}
+.pullDownTitle {height: 43px;width: 190px;background: #db3652;color: #ffffff;font-size: 16px;font-weight: normal;text-align: center;line-height: 42px;}
+.pullDownTitle:hover{color:#fff}
+.pullDownList{width:190px;height:440px;background:url("../images/pullbg.jpg"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/pullbg.jpg*/);position:relative;}
+.pullDownList li{height:44px;line-height:44px;color:#fefcfc;font-size:14px;padding-left:40px;position:relative}
+.pullDownList li i{display:inline-block;position:relative;top:4px;margin-right:8px;left:0;-webkit-transition:margin-left .2s linear;-moz-transition:margin-left .2s linear;-o-transition:margin-left .2s linear;width:27px;height:20px}
+.pullDownList li.menulihover i{margin-left:6px}
+.pullDownList li i.listi1{background:url("../images/indexicon1.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/indexicon1.png*/) no-repeat}
+.pullDownList li i.listi2{background:url("../images/indexicon2.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/indexicon2.png*/) no-repeat}
+.pullDownList li i.listi3{background:url("../images/indexicon3.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/indexicon3.png*/) no-repeat}
+.pullDownList li i.listi4{background:url("../images/indexicon4.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/indexicon4.png*/) no-repeat}
+.pullDownList li i.listi5{background:url("../images/indexicon5.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/indexicon5.png*/) no-repeat}
+.pullDownList li i.listi6{background:url("../images/indexicon6.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/indexicon6.png*/) no-repeat}
+.pullDownList li i.listi7{background:url("../images/indexicon7.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/indexicon7.png*/) no-repeat}
+.pullDownList li i.listi8{background:url("../images/indexicon8.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/indexicon8.png*/) no-repeat}
+.pullDownList li i.listi9{background:url("../images/indexicon9.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/indexicon9.png*/) no-repeat}
+.pullDownList li a{color:#fefcfc;font-size:13px}
+.pullDownList li.menuliselected{background:#6d6d6d}
+.pullDownList li.menuliselected span{top:20px;right:7px;border-left:4px solid transparent;border-top:4px solid #fff;border-right:4px solid transparent;border-bottom:0}
+.pullDownList li.menulihover{background:#6d6d6d}
+.pullDownList li span{display:inline-block;width:0;height:0;position:absolute;top:12px;right:8px}
+.pullDownList li.menulihover span{top:17px;right:8px;border-left:4px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent;border-right:0}
+.yMenuListCon{width:300px;height:483px;position:absolute;z-index:2;top:0;left:190px;overflow:hidden}
+.yMenuListCon p{width:auto;color:#7f7e7e;font-size:12px;margin:10px 0 0 -1px;overflow:hidden}
+.yMenuListCon p a{color:#7f7e7e;font-size:12px;padding:0 8px;display:inline-block;float:left;margin-top:5px;background:url("../images/indexicon1.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/indexicon1.png*/) 0 -1695px}
+.yMenuListCon p a:hover{color:#ca1b38;text-decoration:underline}
+.yMenuLCinList p a:first-child{color: #ca1b38;}
+.yMenuListConin{display:none;width: 260px;background:#fff;opacity:.9;-moz-opacity:.9;filter:alpha(opacity=90);padding:0 20px;height:440px;position:absolute;left:0;top:43px}
+.yMenuLCinList{width: 260px;overflow:hidden}
+.yMenuLCinList p a{display:block;border-left:1px solid #CCC;padding:0 10px;height:18px;line-height:18px;}
+/*.yMenuLCinList h3{position:relative;height:20px;width:auto;margin:25px auto 0;border-bottom:1px solid #000}*/
+
+.yMenuLCinList h3 {
+    position: relative;
+    height: 20px;
+    margin-top: 25px;
+    border-bottom: 1px solid #000;
+}
+.yMenuLCinList h3 a{font-size:12px;color:#2d2d2d;position:absolute;bottom:0;display:block}
+.yMenuLCinList h3 .yListMore{color:#666;font-weight:400;right:0;width:40px;height:30px}
+.yMenuLCinList h3 .yListName{-webkit-transition:left .2s linear;-moz-transition:left .2s linear;-o-transition:left .2s linear;display:block;width:90px;height:22px;line-height:22px;padding-top:17px;padding-left:30px;left:0}
+.yMenuLCinList h3 .yListName:hover{left:6px}
+.yLNicon1{background:url("../images/yListNameicon-hp.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/yListNameicon-hp.png*/) no-repeat 0 5px}
+.yLNicon2{background:url("../images/yListNameicon-sp.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/yListNameicon-sp.png*/) no-repeat 0 5px}
+.yLNicon3{background:url("../images/yListNameicon-jj.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/yListNameicon-jj.png*/) no-repeat 0 5px}
+.yLNicon4{background:url("../images/yListNameicon-hw.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/yListNameicon-hw.png*/) no-repeat 0 5px}
+.yLNicon5{background:url("../images/yListNameicon-ka.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/yListNameicon-ka.png*/) no-repeat 0 5px}
+.yLNicon6{background:url("../images/yListNameicon-jd.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/yListNameicon-jd.png*/) no-repeat 0 5px}
+.yLNicon7{background:url("../images/yListNameicon-mi.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/yListNameicon-mi.png*/) no-repeat 0 5px}
+.yLNicon8{background:url("../images/yListNameicon-my.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/yListNameicon-my.png*/) no-repeat 0 5px}
+.yLNicon9{background:url("../images/yListNameicon-qc.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/yListNameicon-qc.png*/) no-repeat 0 5px}
+.yLNicon10{background:url("../images/yListNameicon-tm.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/yListNameicon-tm.png*/) no-repeat 0 5px}
+.yBanner{height: 440px;width: 100%;overflow: hidden;position: relative;z-index:1;}
+.yBannerList{height: 480px;width: 100%;background:#4cbde9;position: absolute;top: 0;left: 0;}
+.ybannerHide{display: none;}
+.ymainBanner{-webkit-transform: scaleX(1.05) scaleY(1.05);-moz-transform: scaleX(1.05) scaleY(1.05);-ms-transform: scaleX(1.05) scaleY(1.05);-o-transform: scaleX(1.05) scaleY(1.05);transform: scaleX(1.05) scaleY(1.05);}
+.ybannerExposure .ymainBanner{-webkit-transition: -webkit-transform 4s linear;-moz-transition: -moz-transform 4s linear;-o-transition: -o-transform 4s linear;transition: transform 4s linear;-webkit-transform: scaleX(1) scaleY(1);-moz-transform: scaleX(1) scaleY(1);-ms-transform: scaleX(1) scaleY(1);-o-transform: scaleX(1) scaleY(1);transform: scaleX(1) scaleY(1);}
+.yBannerListIn{overflow:hidden;width: 1010px;padding-left:190px;height: 480px;margin: 0 auto;position: relative;}
+.ytextBanner{opacity: 0;position: absolute;right: 190px;top: 0;width: 405px;height: 480px;z-index: 1;background: url("../images/banner1in.png"/*tpa=http://www.123kg.cn/statics/templates/yungoucms/images/banner1in.png*/) no-repeat center center;}
+.ybannerExposure .ytextBanner{-webkit-transition: opacity .6s linear;-moz-transition: opacity .6s linear;-o-transition: opacity .6s linear;transition: opacity .6s linear;opacity: 1;}
+.yBannerListIn .yBannerListInRight{position: absolute;top: 0;right: 0;width: 190px;height: 480px;z-index: 5;opacity: 0.95;filter: alpha(opacity=95)}
+.yBannerListInRight .yimaginaryLine{display: block;height: 2px;}
+.yBannerListInRight img{vertical-align: top;-webkit-transition: -webkit-transform .2s linear;-moz-transition: -moz-transform .2s linear;-o-transition: -o-transform .2s linear;transition: transform .2s linear;}
+.yBannerListInRight img:hover{-webkit-transform: translateX(-5px);-moz-transform: translateX(-5px);-ms-transform: translateX(-5px);-o-transform: translateX(-5px);transform: translateX(-5px);}
+.yBanner .hd{position: absolute;bottom: 10px;left: 45%;}
+.yBanner .hd ul li{float:left;width:20px;height:6px;margin-left:8px;background:#3e3e3e;}
+.yBanner .hd ul .on{background:#db3652;}

@@ -1,0 +1,36 @@
+<table border='1'>
+<th>用户</th>
+<th>权限</th>
+<volist name='arr' id='v'>
+	<tr>
+		<td>{$v.u_name}</td>
+		<td>{$v.r_name}</td>
+	</tr>
+</volist>
+</table>
+<select id='change' onchange="change();">
+	<foreach name='info' item='v'>
+	<option value='{$v.u_id}'>{$v.u_name}</option>
+	</foreach>
+</select>
+<div id='list'>
+</div>
+<script>
+	//查看每个用户的权限
+	function change(){
+		var val = document.getElementById('change').value;
+		//创建ajax对象
+		var ajax = new XMLHttpRequest();
+		//与服务器建立连接
+		ajax.open('get','__URL__/role/val/'+val,true);
+		//发送请求
+		ajax.send();
+		//回调函数
+		ajax.onreadystatechange = function(){
+			//判断
+			if(ajax.readyState==4 && ajax.status==200){
+				document.getElementById('list').innerHTML = ajax.responseText;
+			}
+		}
+	}
+</script>

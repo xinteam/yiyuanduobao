@@ -1,0 +1,32 @@
+<volist name="arr" id="vo">
+<img src="__PUBLIC__/{$vo.s_tupian}" width='200px' height='200px'><br>
+{$vo.s_price}<br>
+{$vo.s_content}
+</volist>
+<br>
+<form action='__URL__/uploads' method='post' enctype="multipart/form-data">
+<input type='hidden' name='s_id' value="<volist name='arr' id='vo'>{$vo.s_id}</volist>">
+评论内容:<textarea id='content' name='p_content' cols='20' rows='5'></textarea><br/>
+<div id='aa'>
+<input type='button' value='增加' id='MyFile' onclick="add();"><input type='file' name='myfile[]'>
+</div>
+<input type='submit' value='评论'>
+
+<script>
+	function add() {  
+	var odiv = document.getElementById("aa");
+	//alert(odiv)
+	var str = "<div><input type='button' value='增加' onclick='add();'><input name='myfile[]' type='file' /></div>";
+	odiv.insertAdjacentHTML("beforeEnd",str);
+	}
+
+	/*function del(obj){
+		//alert(obj);
+		var odiv = document.getElementById("aa");
+		var grand = document.getElementById("grand");
+		var str = "<div><input type='button' value='增加' onclick='add();'><input name='File' type='file' /><input type='button' value='减少' onclick='del(this)'></div>";
+		father = obj.parentNode.parentNode;
+		grand.removeChild(obj.parentNode.parentNode);
+	}*/
+</script>
+</form>

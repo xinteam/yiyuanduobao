@@ -1,0 +1,15 @@
+<form action='__URL__/update/' method='post'>
+请选择角色：<select name='user'>
+			<volist name='arr_user' id='vo'>
+			<option value='{$vo.u_id}'>{$vo.u_name}</option>
+			</volist>
+			</select><br/>
+请选择权限：<br><foreach name='arr_role' item='v'>
+				<if condition=" eq {$v.r_id}">
+				<input type='checkbox' checked  name='role[]' value="{$v.r_id}">{$v.name}<br>
+				
+				
+				
+			</foreach>
+			<input type='submit' value='确定'>
+			</form>
