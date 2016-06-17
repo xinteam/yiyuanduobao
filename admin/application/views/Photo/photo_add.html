@@ -1,0 +1,23 @@
+<html>
+	<table width="100%" align='center'>
+		<tr>
+			<td colspan="2">
+				<form action="<?php echo site_url('Photo/photo_add')?>" method="post" enctype="multipart/form-data">
+					<table width="30%" >
+						<tr>
+							<td>轮播图片：</td>
+							<td width="20%"><input type="file" name="car_name" /></td>
+						</tr>
+						<tr>
+							<td>显示状态：</td>
+							<td width="20%"><input type="radio" name="car_status" value='1'/>&nbsp;是&nbsp;&nbsp;&nbsp;<input type="radio" name="car_status" value='0' />&nbsp;否</td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="submit" value="提交" /></td>
+						</tr>
+					</table>
+				</form>
+			</td>
+		</tr>
+	</table>
+</html>
