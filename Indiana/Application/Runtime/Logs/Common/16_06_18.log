@@ -1738,3 +1738,15 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
 ERR: 无法加载模块:Index.htm
 
+[ 2016-06-18T15:29:46+08:00 ] 127.0.0.1 /xiangmu/Indiana/index.htm/api/getshoptest/lottery_shop_json/1466234986745?gid=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000614s ]
+ERR: 无法加载模块:Index.htm
+
+[ 2016-06-18T15:29:54+08:00 ] 127.0.0.1 /xiangmu/Indiana/index.htm/api/getshoptest/lottery_shop_json/1466234994747?gid=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+ERR: 无法加载模块:Index.htm
+
