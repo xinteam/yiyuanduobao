@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title></title>
+</head>
+<script type="text/javascript" src="<?php echo base_url('public/jquery.js') ?>"></script>
+<body >
+<div  id='list' align="center"></br></br>
+<table width="300" >
+<tr>
+	<th>ID</th>
+	<td>图片</td>
+	<td>显示</td>
+	<td>操作</td>
+</tr>
+<?php foreach($news as $v) : ?>
+<tr>
+	<td><?php echo $v['car_id']?></td>
+	<td><img src="<?php echo base_url($v['car_name'])?>" width="50" height="50"/></td>
+	<td onclick="photo_s(<?php echo $v['car_id']?>)"><?php if($v['car_status']==1){ echo "√"; }else{ echo "×";} ?></td>
+	<td><a href="photo_del?id=<?php echo $v['car_id']?>">删除</a></td>
+</tr>
+<?php endforeach ; ?>
+</table>
+
+<!--显示页码-->
+<?php for($i=1;$i<=$page_all;$i++) : ?>
+	<a href="javascript:void(0)" class='page'><?php echo $i ?></a>
+<?php endfor ; ?>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+$('.page').click(function(){
+	var page=$(this).text();
+	$.get("<?php echo site_url('Photo/photo_list') ?>",{page:page},function(data){
+		//alert(data)
+		$('#list').html(data);
+	})
+})
+
+function photo_s(id){
+	$.get("<?php echo site_url('Photo/photo_update') ?>",{id:id},function(msg){
+		//alert(msg)
+		$('#list').html(msg);
+	})
+	
+}
+</script>
