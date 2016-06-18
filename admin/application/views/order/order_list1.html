@@ -1,0 +1,36 @@
+
+<div id="list">
+<h3><a href="javascript:history.go(-1)"><style type="text/css" >a:link{text-decoration: none;} </style>返回</a>><?php if($status==0){ echo "总订单列表";}elseif($status==2){ echo "未发货订单";}elseif($status==3){ echo "运输中订单";}elseif($status==4){ echo "确认收货订单";}elseif($status==5){ echo "未发货订单";}?></h3>
+
+<center>
+    <!--<input type="text" id="sear" placeholder="搜搜订单号">&nbsp;&nbsp;&nbsp;&nbsp;-->
+    <!--<input type="text"  id="start">--<input type="text" id="end"><input type="button" onclick="sear()" value="搜索">-->
+    <table>
+        <tr>
+            <th><input type="checkbox" id="check" ></th>
+            <th>订单号</th>
+            <th>收货人</th>
+            <th>下单时间</th>
+            <th>总金额</th>
+            <th>应付金额</th>
+            <th>订单状态</th>
+            <th>操作</th>
+        </tr>
+        <?php foreach($data as  $key=>$v){?>
+        <tr>
+            <td><input type="checkbox" class="check" value="<?php echo $v['order_id']?>"></td>
+            <td><?php echo $v['order_number']?></td>
+            <td><?php echo $v['user_name']?></td>
+            <td><?php echo Date("Y-m-d",$v['O_down_time'])?></td>
+            <td><?php echo "￥".$v['sum_money']?></td>
+            <td><?php echo "￥".$v['should_money']?></td>
+            <td><?php echo $v['order_status']?></td>
+            <td><a href="<?php echo site_url('order/sel?id=').$v['order_id'];?>">查看</a>|<a href="<?php echo site_url('order/del?id=').$v['order_id']?>">删除</a></td>
+        </tr>
+        <?php }?>
+
+    </table>
+    <?php echo $str;?>
+    <input type="hidden" value="<?php echo $status?>" id="status">
+</center>
+</div>
