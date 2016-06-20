@@ -64,10 +64,11 @@
                             </tr>
                         </table>
                         <ul class="RM">
-                            <li><a href="<?php echo site_url('Order/index')?>" target="main">待处理订单</a></li>
-                            <li><a href="<?php echo site_url('Order/order2')?>" target="main">处理中订单</a></li>
-                            <li><a href="<?php echo site_url('Order/order3')?>" target="main">已发货订单</a></li>
-                            <li><a href="<?php echo site_url('Order/order4')?>" target="main">已完成订单</a></li>
+                            <li><a href="<?php echo site_url('Order/index?status=0')?>" target="main">总订单列表</a></li>
+                            <li><a href="<?php echo site_url('Order/index?status=2')?>" target="main">待发货订单</a></li>
+                            <li><a href="<?php echo site_url('Order/index?status=3')?>" target="main">运输中订单</a></li>
+                            <li><a href="<?php echo site_url('Order/index?status=5')?>" target="main">未收货订单</a></li>
+                            <li><a href="<?php echo site_url('Order/index?status=4')?>" target="main">确认收货订单</a></li>
                         </ul>
                     </div>
                     <!-- *********** -->
