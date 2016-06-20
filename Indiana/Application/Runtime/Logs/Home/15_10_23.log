@@ -1,9 +1,0 @@
-[ 2015-10-23T21:21:21+08:00 ] 127.0.0.1 /thinkphp_3.2.3_full/index.php
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
-INFO: [ app_init ] --END-- [ RunTime:0.042085s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006081s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.006350s ]
-ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tj.show' doesn't exist
-
