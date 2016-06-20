@@ -25,29 +25,36 @@
         <div class="login-form">
             <div class="BT">
             	<span>
-                	<a href="javascript:if(confirm('http://www.123kg.cn/register/?channel=  \n\n╦цнд╪Чнч╥╗сц Teleport Ultra обть, рРн╙ ╡╩©исц, ╩Р╥ефЗакобть, ╩РоНд©╪╢╫╚мёж╧║ё  \n\nдЦоКтз╥ЧнЯфВио╢Р©╙кЭ?'))window.location='http://www.123kg.cn/register/?channel='" tppabs="http://www.123kg.cn/register/?channel=">Г╚▀Е█ЁФЁ╗Е├▄</a>
+                	<a href="javascript:if(confirm('http://www.123kg.cn/register/?channel=  \n\n╦цнд╪Чнч╥╗сц Teleport Ultra обть, рРн╙ ╡╩©исц, ╩Р╥ефЗакобть, ╩РоНд©╪╢╫╚мёж╧║ё  \n\nдЦоКтз╥ЧнЯфВио╢Р©╙кЭ?'))window.location='__URL__/zhuce'" tppabs="http://www.123kg.cn/register/?channel=">Г╚▀Е█ЁФЁ╗Е├▄</a>
                     <a href="http://www.123kg.cn/member/finduser/findpassword">Е©≤Х╝╟Е╞├Г═│О╪÷</a>
                 </span>
             </div>
-            <form class="form" method="post" action="" id="export">
+            <form class="form" method="post" action="__URL__/verify_pro" id="export">
                 <div class="tips hide">
                     Х╢╕Ф┬╥Е░█Д╦▌Е╞├Г═│Д╦█Е▄╧И┘█О╪▄Х╞╥И┤█Ф√╟Х╬⌠Е┘╔
                 </div>
                 <div class="inp-txt">
-                    <input class="txt l" type="text" name="username"/>
+                    <input class="txt l" type="text" name="user_name"/>
                     <a class="del-txt1 l hide" href=""></a>
                 </div>
                 <div class="inp-pwd">
-                    <input class="pwd l" type="password" name="password"/>
+                    <input class="pwd l" type="password" name="user_pwd"/>
                     <a class="del-txt2 l hide" href=""></a>
                 </div>
                 <div class="inp-code">
-                    <input class="code l" type="text" style="position: absolute;" name="verify"/>
+                    <!-- <input class="code l" type="text" style="position: absolute;" name="verify"/>
                     <img
                             style="position: relative;width: 80px;
     height: 40px;margin-left: 190px;float: left;" alt="И╙▄Х╞│Г═│"
                             src="../api/checkcode/image/53_27/index.htm.png" tppabs="http://www.123kg.cn/api/checkcode/image/53_27/" class="code_img"
-                            id="codeImg" onclick="this.src=this.src+'?'">
+                            id="codeImg" onclick="this.src=this.src+'?'"> -->
+					
+					
+					<input class="code l" type="text" style="position: absolute;" name="code">
+					<img src="__URL__/verify" style="position: relative;width: 80px;
+    height: 40px;margin-left: 10px;float: left;" id="verify" onclick="this.src='__URL__/verify/'+Math.random()">
+					
+			
                 </div>
                 <a class="btn">Г╚▀Е█ЁГ≥╩Е╫∙</a>
                 <input type="hidden" name="login_value" value="" id="login_value_id" />

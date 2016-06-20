@@ -75,13 +75,15 @@
         </table>
     </body>
 </html>
-<script src="<?php echo base_url('public/jquery-2.1.4.min.js')?>"></script>
+<script src="<?php echo base_url('/public/jquery.js')?>"></script>
 <script>
     function fun(){
+
         var admin_name=$("#admin_name").val();
         var admin_pwd=$("#admin_pwd").val();
         var captcha=$("#captcha").val();
         $.ajax({
+
             type:'post',
             url:"<?php echo site_url('Welcome/login_pro')?>",
             data:"admin_name="+admin_name+'&admin_pwd='+admin_pwd+'&captcha='+captcha,
