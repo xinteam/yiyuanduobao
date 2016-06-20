@@ -29,25 +29,32 @@
                     <a href="http://www.123kg.cn/member/finduser/findpassword">忘记密码？</a>
                 </span>
             </div>
-            <form class="form" method="post" action="" id="export">
+            <form class="form" method="post" action="/yiyuanduobao/Indiana/index.php/Home/Index/verify_pro" id="export">
                 <div class="tips hide">
                     账户名与密码不匹配，请重新输入
                 </div>
                 <div class="inp-txt">
-                    <input class="txt l" type="text" name="username"/>
+                    <input class="txt l" type="text" name="user_name"/>
                     <a class="del-txt1 l hide" href=""></a>
                 </div>
                 <div class="inp-pwd">
-                    <input class="pwd l" type="password" name="password"/>
+                    <input class="pwd l" type="password" name="user_pwd"/>
                     <a class="del-txt2 l hide" href=""></a>
                 </div>
                 <div class="inp-code">
-                    <input class="code l" type="text" style="position: absolute;" name="verify"/>
+                    <!-- <input class="code l" type="text" style="position: absolute;" name="verify"/>
                     <img
                             style="position: relative;width: 80px;
     height: 40px;margin-left: 190px;float: left;" alt="验证码"
                             src="../api/checkcode/image/53_27/index.htm.png" tppabs="http://www.123kg.cn/api/checkcode/image/53_27/" class="code_img"
-                            id="codeImg" onclick="this.src=this.src+'?'">
+                            id="codeImg" onclick="this.src=this.src+'?'"> -->
+					
+					
+					<input class="code l" type="text" style="position: absolute;" name="code">
+					<img src="/yiyuanduobao/Indiana/index.php/Home/Index/verify" style="position: relative;width: 80px;
+    height: 40px;margin-left: 10px;float: left;" id="verify" onclick="this.src='/yiyuanduobao/Indiana/index.php/Home/Index/verify/'+Math.random()">
+					
+			
                 </div>
                 <a class="btn">立即登录</a>
                 <input type="hidden" name="login_value" value="" id="login_value_id" />

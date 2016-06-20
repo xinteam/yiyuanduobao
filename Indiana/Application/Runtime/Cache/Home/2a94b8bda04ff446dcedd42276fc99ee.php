@@ -77,7 +77,10 @@
 				<ul id="ulTopRight" class="fr">
 										<li id="logininfo">
 						<div class="u-menu-hd">
-							<a title="登录" href="/yiyuanduobao/Indiana/index.php/Home/Index/login" tppabs="http://www.123kg.cn/login">马上登录</a>
+							<?php  if(empty($user_name)){ ?>
+									<a title="登录" href="/yiyuanduobao/Indiana/index.php/Home/Index/login" tppabs="http://www.123kg.cn/login">马上登录</a>
+							<?php	}else{ echo $user_name; } ?>
+							
 						</div>
 					</li>
 					<li class="f-gap"><s></s></li>

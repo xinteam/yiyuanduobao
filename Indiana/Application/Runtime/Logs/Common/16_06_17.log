@@ -1048,3 +1048,21 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
 ERR: 无法加载模块:Img.webscan.360.cn
 
+[ 2016-06-17T18:54:21+08:00 ] 127.0.0.1 /yiyuanduobao/Indiana/index.php/img.webscan.360.cn/status/pai/hash/38f0026577f967c66c8be6c1fce937f0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+ERR: 无法加载模块:Img.webscan.360.cn
+
+[ 2016-06-17T18:54:22+08:00 ] 127.0.0.1 /yiyuanduobao/Indiana/index.php/hm.baidu.com/hm.js-2b4b5b636ef197d0102895dc999c07be
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000708s ]
+ERR: 无法加载模块:Hm.baidu.com
+
+[ 2016-06-17T18:54:23+08:00 ] 127.0.0.1 /yiyuanduobao/Indiana/index.php/img.webscan.360.cn/status/pai/hash/38f0026577f967c66c8be6c1fce937f0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+ERR: 无法加载模块:Img.webscan.360.cn
+
