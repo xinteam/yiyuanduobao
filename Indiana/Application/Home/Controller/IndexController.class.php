@@ -62,6 +62,19 @@ class IndexController extends Controller {
 		$this->display('Index/index');
 	}
 	
+	//首页商品详情页
+	public function goods_info(){
+		
+		$this->display('Index/goods_info');
+	}
+	
+	//商品详情页中的立即快购
+	public function goods_cartlist(){
+		
+		$this->display('Index/member/cart/cartlist');
+	}
+	
+	
 	//新手指南
 	public function newbie(){
 		$this->display('Index/single/newbie');
