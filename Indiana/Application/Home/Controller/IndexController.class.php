@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
 	
-	//登陆
+	//注册
 	public function zhuce(){
 		$this->display('Index/register');
 	}
@@ -15,11 +15,33 @@ class IndexController extends Controller {
 	
 	//生成验证码
 	function verify(){
+		
 		$Verify = new \Think\Verify();
 		$Verify->codeSet = '0123456789'; 
 		$Verify->length   = 4;
+		$Verify->fontSize = 30;
+		$Verify->fontttf = '4.ttf'; 
+		$Verify->useNoise = false;
 		$Verify->entry(); //主要内容
     }
+	
+	//注册进行判断
+	public function zhu_ver($code){
+		$verify = new \Think\Verify();
+		if(!$verify->check($code, $id)){
+			$this->error('验证码不正确');
+		}else{
+			$data['user_name'] = I('post.user_name');
+			$data['user_pwd'] = I('post.userpassword');
+			$user = D('wi_user');
+			$re = $user->add($data);
+			if($re){
+				$this->success('注册成功',U('Index/login'),3);
+			}else{
+				$this->error('注册失败');
+			}
+		}
+	}
 	
 	//登陆进行判断
 	function verify_pro($code){

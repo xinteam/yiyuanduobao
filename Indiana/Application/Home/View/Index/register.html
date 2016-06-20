@@ -566,15 +566,16 @@ getAllNum();
         </div>
         <!-- 注册表单 -->
         <div class="login_from">
-            <form id="form-01" class="demoform" method="post" action="">
+            <form id="form-01" class="demoform" method="post" action="__URL__/zhu_ver">
                 <ul>
                     <li>
-                        <label>手机号码:</label>
+                        <label>用户名:</label>
 
                         <div>
-                            <input type='text' id="mobile" tabindex="1" datatype="m" sucmsg="帐号验证通过！" nullmsg="请填写帐号！"
+                            <!-- <input type='text' id="mobile" tabindex="1" datatype="m" sucmsg="帐号验证通过！" nullmsg="请填写帐号！"
                                    ajaxurl="http://www.123kg.cn/member/user/check" errormsg="手机号格式错误！！" name="name"
-                                   class="inputxt">
+                                   class="inputxt"> -->
+							<input type='text' name='user_name'>
                         </div>
                     </li>
                     <li>
@@ -592,13 +593,19 @@ getAllNum();
                     <li><label>确认密码:</label><input id="angainpassword" tabindex="1" datatype="*" recheck="userpassword"
                                                    nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！" type="password"
                                                    name="userpassword2" class="inputxt" maxlength="20"></li>
-                    <li><label>验&nbsp;&nbsp;证&nbsp;&nbsp;码:</label><input type='text' tabindex="1"
+                    <li><label>验&nbsp;&nbsp;证&nbsp;&nbsp;码:</label><!-- <input type='text' tabindex="1"
                                                                           style="position: relative" name="code"><span
                             id="span_code"><img
                             style="position: absolute;width: 80px;
     height: 40px;margin-left: 15px;" alt="验证码"
                             src="api/checkcode/image/53_27/index.htm.png" tppabs="http://www.123kg.cn/api/checkcode/image/53_27/" class="code_img"
-                            id="codeImg" onclick="this.src=this.src+'?'"></span></li>
+                            id="codeImg" onclick="this.src=this.src+'?'"></span> -->
+							
+					<input class="code l" type="text" style="position: absolute;" name="code">		
+					<img src="__URL__/verify" style="position: relative;width: 80px;
+    height: 40px;margin-left:178px;float: left;" id="verify" onclick="this.src='__URL__/verify/'+Math.random()">
+						
+							</li>
                 </ul>
                 <div id="btn">
                     <input type="checkbox" id="read"/>
