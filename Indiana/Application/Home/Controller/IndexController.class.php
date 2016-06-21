@@ -100,7 +100,7 @@ class IndexController extends Controller {
 	
 	
 	
-	//首页商品详情页
+	//首页商品详情页1
 	public function goods_info(){
 		$goods_id = isset($_GET['goods_id'])?$_GET['goods_id']:1;
 		$goods = D('wi_goods');
