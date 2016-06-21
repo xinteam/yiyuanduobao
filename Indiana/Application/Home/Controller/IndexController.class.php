@@ -102,6 +102,11 @@ class IndexController extends Controller {
 	
 	//首页商品详情页
 	public function goods_info(){
+		$goods_id = isset($_GET['goods_id'])?$_GET['goods_id']:1;
+		$goods = D('wi_goods');
+		$g_info = $goods->where("goods_id='$goods_id'")->find();
+		//print_r($g_info);exit;
+		$this->assign('g_info',$g_info);
 		
 		$this->display('Index/goods_info');
 	}
