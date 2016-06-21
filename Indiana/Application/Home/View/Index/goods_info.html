@@ -394,7 +394,7 @@ $.fn.CloudZoom.defaults = {
 </div>
 <div class="show_content">
 	<!-- 商品期数 -->
-	<div id="divPeriodList" class="show_Period" style="max-height:99px;">		
+	<!-- <div id="divPeriodList" class="show_Period" style="max-height:99px;">		
 		<div class="period_Open"><a class="gray02" click="off" id="btnOpenPeriod" href="javascript:void(0);">展开<i></i></a></div>
 		<ul class="Period_list"><li><a href="134117.htm" tppabs="http://www.123kg.cn/goods/134117"><b class="period_Ongoing period_ArrowCur" style="padding-left:0px;">第3期<i></i></b></a></li><li><a href="../dataserver/128003.htm" tppabs="http://www.123kg.cn/dataserver/128003" class="gray02">第2期</a></li><li><a href="../dataserver/125568.htm" tppabs="http://www.123kg.cn/dataserver/125568" class="gray02">第1期</a></li></ul>	</div>
 	<script>
@@ -411,14 +411,14 @@ $.fn.CloudZoom.defaults = {
 					$(this).html("展开<i></i>");
 				}			
 		});
-	</script>	
+	</script>	 -->
 	<!-- 商品信息 -->
 	<div class="Pro_Details">
-		<h1><span>(第3期)</span><span >奔驰 长轴距C级运动轿车 180 L</span><span style="color:#FF0000;">25年使用权 商品价格包括购置税 上牌费 车船使用税 交强险 不包括其他费用及运输费</span></h1>
+		<h1><span style="color:#FF0000;">{$g_info.goods_name}</span></h1>
 		<div class="Pro_Detleft">
 			<div class="zoom-small-image">
-				<span href="__PUBLIC__/statics/uploads/shopimg/20160414/35747098601007.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160414/35747098601007.jpg" class = 'cloud-zoom' id='zoom1' rel="adjustX:10, adjustY:-2">
-                <img width="80px" height="80px" src="__PUBLIC__/statics/uploads/shopimg/20160414/35747098601007.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160414/35747098601007.jpg" /></span>
+				<span href="__PUBLIC__/{$g_info.goods_img}" class = 'cloud-zoom' id='zoom1' rel="adjustX:10, adjustY:-2">
+                <img width="80px" height="80px" src="__PUBLIC__/{$g_info.goods_img}"/></span>
 			</div>
 
 			<div class="zoom-desc"> 
@@ -473,7 +473,7 @@ $.fn.CloudZoom.defaults = {
 			</div>
 								</div>
 		<div class="Pro_Detright">
-			<p class="Det_money">价值：<span class="rmbgray">375750.00</span></p>
+			<p class="Det_money">价值：<span class="rmbgray">{$f_info.goods_}</span></p>
 			<!--显示揭晓动画 start-->
 							<div class="Progress-bar">
 				<p title="已完成66.96%"><span style="width:301.34131736527px; display:;"></span></p>
