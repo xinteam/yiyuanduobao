@@ -19,7 +19,7 @@ class Photo extends CI_Controller {
 		
 		$data['car_status'] = $this->input->post('car_status');
 		//$info = $_FILES;
-		$config['upload_path'] = './uploads/';
+		$config['upload_path'] = '../../uploads/';
 		$config['allowed_types'] = 'gif|jpg|png';
 	
 
