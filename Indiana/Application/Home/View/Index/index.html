@@ -82,8 +82,11 @@
 								?>
 									<a title="登录" href="__URL__/login" tppabs="http://www.123kg.cn/login">马上登录</a>
 							<?php	}else{
-									unset($_SESSION['user_name']);
-									echo $user_name;
+									
+									echo $user_name; ?>
+									<?php unset($_SESSION['user_name']) ?>
+									<a title="登录" href="__URL__/login" tppabs="http://www.123kg.cn/login">退出</a>
+							<?php		
 								}
 							?>
 							
@@ -211,7 +214,7 @@
 									href="goods_list/75_0_0.html" tppabs="http://www.123kg.cn/goods_list/75_0_0.html"
 									target="_blank">代金券类</a></li> 								<li><i class="listi5"></i> <a
 									href="goods_list/6_0_0.html" tppabs="http://www.123kg.cn/goods_list/6_0_0.html"
-									target="_blank">精品电器</a></li> 								<li><i class="listi6"></i> <a
+									target="_blank">精品电器</a></li>							<li><i class="listi6"></i> <a
 									href="goods_list/96_0_0.html" tppabs="http://www.123kg.cn/goods_list/96_0_0.html"
 									target="_blank">品质生活</a></li> 								<li><i class="listi7"></i> <a
 									href="goods_list/182_0_0.html" tppabs="http://www.123kg.cn/goods_list/182_0_0.html"
@@ -219,7 +222,9 @@
 									href="goods_list/168_0_0.html" tppabs="http://www.123kg.cn/goods_list/168_0_0.html"
 									target="_blank">食品干货</a></li> 								<li><i class="listi9"></i> <a
 									href="goods_list/76_0_0.html" tppabs="http://www.123kg.cn/goods_list/76_0_0.html"
-									target="_blank">礼品玩具</a></li> 							</ul>
+									target="_blank">礼品玩具</a></li> 	
+									</ul>
+									
 							<!-- 下拉详细列表具体分类 -->
 							<!--
 							<div class="yMenuListCon">
@@ -376,21 +381,27 @@
 			</div>
 		</div>
 		<div class="yBanner">
+		
+		<?php foreach($info as $v){ ?>
+		
 			 			<div class="yBannerList ybannerExposure"
 				style="display: none; background: #ffb97a">
 				<div class="yBannerListIn">
+				
 					<a href="help/47.html" tppabs="http://www.123kg.cn/help/47.html" target="_blank"> <img
-						class="ymainBanner" src="__PUBLIC__/statics/uploads/banner/20160603/37572133921921.jpg" tppabs="http://www.123kg.cn/statics/uploads/banner/20160603/37572133921921.jpg">
+						class="ymainBanner" src="__PUBLIC__/{$v.car_name}" style="width:1000px;height:450px">
 							</span></a>
-					<div class="yBannerListInRight" target="_blank">
+					<!-- <div class="yBannerListInRight" target="_blank">
 						<a href="goods/134117.htm" tppabs="http://www.123kg.cn/goods/134117"> <img
-							src="__PUBLIC__/statics/uploads/banner/20160603/76910892923069.png" tppabs="http://www.123kg.cn/statics/uploads/banner/20160603/76910892923069.png"></a> <b
+							src="__PUBLIC__/statics/uploads/banner/20160603/76910892923069.png"></a> <b
 							class="yimaginaryLine"> </b> <a
 							href="index.htm" tppabs="http://www.123kg.cn/" target="_blank"> <img
-							src="__PUBLIC__/statics/uploads/banner/20160603/83215620923084.png" tppabs="http://www.123kg.cn/statics/uploads/banner/20160603/83215620923084.png"></a>
-					</div>
+							src="__PUBLIC__/statics/uploads/banner/20160603/83215620923084.png"></a>
+					</div> -->
 				</div>
 			</div>
+		<?php } ?>
+		<!--
 			 			<div class="yBannerList ybannerExposure"
 				style="display: none; background: #f6a844">
 				<div class="yBannerListIn">
@@ -465,7 +476,7 @@
 							src="__PUBLIC__/statics/uploads/banner/20160603/32747333923405.png" tppabs="http://www.123kg.cn/statics/uploads/banner/20160603/32747333923405.png"></a>
 					</div>
 				</div>
-			</div>
+			</div> -->
 						<div class="hd">
 				<ul>
 										<li></li> 					<li></li> 					<li></li> 					<li></li> 					<li></li> 					<li></li> 				</ul>
