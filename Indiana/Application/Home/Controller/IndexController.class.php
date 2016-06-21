@@ -79,14 +79,16 @@ class IndexController extends Controller {
 	
 	//显示首页界面
     public function index(){
+		//登陆用户
 		$user_name = $_SESSION['user_name'];
+		$this->assign('user_name',$user_name);
 		//处理轮播图片
 		$carousel = D('wi_carousel');
 		$info = $carousel->where('car_status=1')->order('car_id desc')->limit(6)->select();
-		//print_r($info);exit;
-		
 		$this->assign('info',$info);
-		$this->assign('user_name',$user_name);
+		//最新揭晓商品展示
+		$show = D('wi_show');
+		$show->order('show_id desc')->limit(5)->select();
 		$this->display('Index/index');
 	}
 	
@@ -101,7 +103,6 @@ class IndexController extends Controller {
 		
 		$this->display('Index/member/cart/cartlist');
 	}
-	
 	
 	//新手指南
 	public function newbie(){
