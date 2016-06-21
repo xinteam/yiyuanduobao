@@ -80,6 +80,12 @@ class IndexController extends Controller {
 	//显示首页界面
     public function index(){
 		$user_name = $_SESSION['user_name'];
+		//处理轮播图片
+		$carousel = D('wi_carousel');
+		$info = $carousel->where('car_status=1')->order('car_id desc')->limit(6)->select();
+		//print_r($info);exit;
+		
+		$this->assign('info',$info);
 		$this->assign('user_name',$user_name);
 		$this->display('Index/index');
 	}
