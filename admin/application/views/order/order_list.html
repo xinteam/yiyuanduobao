@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('/Public/date/jquery-ui.theme.min.css');?>">
 
 <body>
-<div style="float: right">
+<div style="float: right" id="sou">
     <input type="text" id="sear" placeholder="搜搜订单号">&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="text"  id="start" placeholder="日期区间">--<input  placeholder="日期区间" type="text" id="end"><input type="button" onclick="sear()" value="搜索">
 </div>
@@ -72,6 +72,7 @@ function sear(){
         var start=$("#start").val()
         var end=$("#end").val()
     var  status=$('#status').val()
+    $("#sou").show()
        // alert(end)
         $.ajax({
             url:"<?php echo site_url('order/search?sear=')?>"+sear+"&start="+start+"&end="+end+"&status="+status,
@@ -96,6 +97,7 @@ function sear(){
     function pages($data){
       // alert(132)
        var  status=$('#status').val()
+        $("#sou").hide()
         $.ajax({
             url:"<?php echo site_url('order/index?page=')?>"+$data+"&status="+status,
             success:function(data){
