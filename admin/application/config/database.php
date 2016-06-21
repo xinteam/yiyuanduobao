@@ -78,7 +78,7 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 	'database' => 'snatch',
-	'dbdriver' => 'mysqli',
+	'dbdriver' => 'mysql',
 	'dbprefix' => 'wi_',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
