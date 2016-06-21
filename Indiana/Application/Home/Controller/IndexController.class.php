@@ -77,6 +77,7 @@ class IndexController extends Controller {
 		$this->display('Index/help/1');
 	}
 	
+	
 	//显示首页界面
     public function index(){
 		//登陆用户
@@ -86,11 +87,18 @@ class IndexController extends Controller {
 		$carousel = D('wi_carousel');
 		$info = $carousel->where('car_status=1')->order('car_id desc')->limit(6)->select();
 		$this->assign('info',$info);
-		//最新揭晓商品展示
-		$show = D('wi_show');
-		$show->order('show_id desc')->limit(5)->select();
+		//最热商品展示
+		$goods = D('wi_goods');
+		$goods_hot = $goods->order('goods_people desc')->limit(5)->select();
+		$this->assign('goods_hot',$goods_hot);
+		//最新商品展示
+		$goods_new = $goods->order('goods_id desc')->limit(5)->select();
+		$this->assign('goods_new',$goods_new);
+		
 		$this->display('Index/index');
 	}
+	
+	
 	
 	//首页商品详情页
 	public function goods_info(){

@@ -896,17 +896,19 @@
 			</div>
 		</div>
 		<div class="hot-wares" id="divSoonGoodsList">
+		
+		<?php foreach($goods_hot as $v ){ ?>
 						<div class="h-wares-list">
+						
 				<div class="h-wares-con">
+				
 					<ul>
 						<li class="h-hot-pic cart-pic"><a
-							href="__URL__/goods_info" tppabs="http://www.123kg.cn/goods/134117.html" target="_blank"
-							title="奔驰 长轴距C级运动轿车 180 L"><img alt="奔驰 长轴距C级运动轿车 180 L"
-								src="__PUBLIC__/statics/uploads/shopimg/20160414/35747098601007.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160414/35747098601007.jpg"></a></li>
+							href="__URL__/goods_info?goods_id={$v.goods_id}"><img alt="{$v.goods_name}"
+								src="__PUBLIC__/{$v.goods_img}"></a></li>
 						<li class="h-hot-name"><a
-							href="__URL__/goods_info" tppabs="http://www.123kg.cn/goods/134117" target="_blank"
-							title="奔驰 长轴距C级运动轿车 180 L">奔驰 长轴距C级运动轿车 180 L</a></li>
-						<li class="gray">价值：￥375750.00</li>
+							href="__URL__/goods_info?goods_id={$v.goods_id}">{$v.goods_name}</a></li>
+						<li class="gray">价值：￥{$v.goods_price}</li>
 						<span class="ten"></span>						<li class="h-progress">
 							<dl class="m-progress">
 								<dt>
@@ -920,7 +922,7 @@
 								</dd>
 							</dl>
 						</li>
-						<li><a href="__URL__/goods_info" tppabs="http://www.123kg.cn/goods/134117.html" class="u-imm"
+						<li><a href="__URL__/goods_info?goods_id={$v.goods_id}" tppabs="http://www.123kg.cn/goods/134117.html" class="u-imm"
 							target="_blank" title="只要1元，即可购买">立即快购</a>
 							
 							<a href="javascript:;" title="加入到购物车" class="u-cart"> <s>
@@ -936,7 +938,9 @@
 						<div style="clear: both"></div>
 					</ul>
 				</div>
-			</div>
+				
+			</div><?php } ?>
+			<!-- 
 						<div class="h-wares-list">
 				<div class="h-wares-con">
 					<ul>
@@ -1131,7 +1135,7 @@
 						<div style="clear: both"></div>
 					</ul>
 				</div>
-			</div>
+			</div> -->
 					</div>
 		<!--最新商品-->
 		<div class="g-title">
@@ -1142,18 +1146,17 @@
 			</div>
 		</div>
 		<div class="hot-wares" id="divSoonGoodsList">
+				<?php foreach($goods_new as $v){ ?>
 						<div class="h-wares-list">
 				<div class="h-wares-con">
 					<ul>
 						<li class="h-hot-pic cart-pic"><a
-							href="goods/147667.html" tppabs="http://www.123kg.cn/goods/147667.html" target="_blank"
-							title="China Gold/中国黄金 9999金条2g 金砖投资 送礼金条"><img alt="China Gold/中国黄金 9999金条2g 金砖投资 送礼金条"
-								src="__PUBLIC__/statics/uploads/shopimg/20160601/44617539773357.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160601/44617539773357.jpg"></a> <i
+							href="goods/147667.html" ><img alt="{$v.goods_name}"
+								src="__PUBLIC__/{$v.goods_img}" ></a> <i
 							class="goods_xp"></i></li>
 												<li class="h-hot-name"><a
-							href="goods/147667.htm" tppabs="http://www.123kg.cn/goods/147667" target="_blank"
-							title="China Gold/中国黄金 9999金条2g 金砖投资 送礼金条">China Gold/中国黄金 9999金条2g 金砖投资 送礼金条</a></li>
-						<li class="gray">价值：￥635.00</li>
+							href="goods/147667.htm" >{$v.goods_name}</a></li>
+						<li class="gray">价值：￥{$v.goods_price}</li>
 						<li class="h-progress">
 							<dl class="m-progress">
 								<dt>
@@ -1170,6 +1173,7 @@
 						<li><a href="goods/147667.html" tppabs="http://www.123kg.cn/goods/147667.html" class="u-imm"
 							target="_blank" title="只要1元，即可购买">立即快购</a>
 							<a href="javascript:;" title="加入到购物车" class="u-cart"> <s>
+								<img src="__PUBLIC__/238.png" style="width:30px;height:30px">
 							</s>
 						</a></li>
 						<div class="Curbor_id" style="display: none;">
@@ -1182,7 +1186,8 @@
 					</ul>
 				</div>
 			</div>
-						<div class="h-wares-list">
+			<?php } ?>
+						<!-- <div class="h-wares-list">
 				<div class="h-wares-con">
 					<ul>
 						<li class="h-hot-pic cart-pic"><a
@@ -1341,7 +1346,7 @@
 						<div style="clear: both"></div>
 					</ul>
 				</div>
-			</div>
+			</div> -->
 					</div>
 		<!--商品分类-->
 		<div class="k-ware">
