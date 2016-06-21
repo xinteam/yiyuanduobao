@@ -34,7 +34,7 @@ class Photo extends CI_Controller {
 		{
 			$datas = array('upload_data' => $this->upload->data());
 			//print_r($datas);exit;
-			$data['car_name']="uploads/".$datas['upload_data']['file_name'];
+			$data['car_name']="../../uploads/".$datas['upload_data']['file_name'];
 			$arr=$this->db->insert('carousel',$data);
 			if($arr){
 				echo "<script>alert('success'),location.href='photo_list'</script>";
