@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<h3><a href="javascript:history.go(-1)" style="text-decoration: none;">返回</a>>基本信息</h3>
+<center>
+    <div style="float: left ;margin-left: 300px">
+    <table>
+        <tr>
+            <th>订单号：</th>
+            <th><?php echo $data[0]['order_number']?></th>
+        </tr>
+        <tr>
+            <th>购货人：</th>
+            <th><?php echo $data[0]['user_name']?></th>
+        </tr>
+        <tr>
+            <th>支付方式：</th>
+            <th><?php echo $data[0]['pay_name']?></th>
+        </tr>
+        <tr>
+            <th>配送方式：</th>
+            <th><?php echo $data[0]['send_mode']?></th>
+        </tr>
+        </table>
+    </div>
+    <div style="float: right ;margin-right: 300px">
+        <table>
+        <tr>
+            <th>订单状态：</th>
+            <th><?php echo $data[0]['order_status']?></th>
+        </tr>
+        <tr>
+            <th>下单时间：</th>
+            <th><?php echo $data[0]['O_down_time']?></th>
+        </tr>
+        <tr>
+            <th>发货时间：</th>
+            <th><?php echo $data[0]['O_send_time']?></th>
+        </tr>
+        <tr>
+            <th>实付金额：</th>
+            <th><?php echo "￥".$data[0]['should_money']?></th>
+        </tr>
+    </table>
+    </div>
+</center>
+</body>
+</html>
