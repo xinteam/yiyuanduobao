@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="<?php  echo base_url('Style/skin.css')?>" />
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <!-- 头部开始 -->
+    <tr>
+        <td width="17" valign="top" background="<?php  echo base_url('Images/mail_left_bg.gif')?>">
+            <img src="<?php  echo base_url('Images/left_top_right.gif')?>" width="17" height="29" />
+        </td>
+        <td valign="top" background="<?php  echo base_url('Images/content_bg.gif')?>">
+            <table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" background="<?php  echo base_url('Images/content_bg.gif')?>">
+                <tr><td height="31"><div class="title">添加栏目</div></td></tr>
+            </table>
+        </td>
+        <td width="16" valign="top" background="<?php  echo base_url('Images/mail_right_bg.gif')?>"><img src="<?php  echo base_url('Images/nav_right_bg.gif')?>" width="16" height="29" /></td>
+    </tr>
+    <!-- 中间部分开始 -->
+    <tr>
+        <!--第一行左边框-->
+        <td valign="middle" background="<?php  echo base_url('Images/mail_left_bg.gif')?>">&nbsp;</td>
+        <!--第一行中间内容-->
+        <td valign="top" bgcolor="#F7F8F9">
+            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <!-- 空白行-->
+                <tr><td colspan="2" valign="top">&nbsp;</td><td>&nbsp;</td><td valign="top">&nbsp;</td></tr>
+                <tr>
+                    <td colspan="4">
+                        <table>
+                            <tr>
+                                <td width="100" align="center"><img src="<?php  echo base_url('Images/mime.gif')?>" /></td>
+                                <td valign="bottom"><h3 style="letter-spacing:1px;">在这里，您可以查看商品数据！</h3></td>
+                                <td valign="bottom">
+                                    <select style="height:25px " class="cg_class">
+                                        <option value="0">请选择品牌或类型</option>
+                                        <?php foreach($classify as $v){ if($v['leval']=='2'){?>
+                                        <option value="<?php echo $v['c_id']?>"><?php echo $v['c_name']?></option>
+                                        <?php }}?>
+                                    </select>
+                                    <input class="cg_name" type="text" style="height: 23px" placeholder="请输入商品名称！"/>
+                                    <input class="cg_type" type="checkbox" value="g_type"/>上架
+                                    <input class="cg_boutique" type="checkbox" value="g_boutique"/>精品
+                                    <input class="cg_new" type="checkbox" value="g_new"/>新品
+                                    <input class="cg_hot" type="checkbox" value="g_hot"/>热销
+                                    <input type="button"   class="check_name" value="搜索"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 一条线 -->
+                <tr>
+                    <td height="40" colspan="4">
+                        <table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+                            <tr><td></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- 添加栏目开始 -->
+                <tr>
+                    <td width="2%">&nbsp;</td>
+                    <td width="96%">
+                        <table class="g_list" width="100%">
+                            <tr>
+                                <td colspan="2">
+                                    <form action="" method="">
+                                        <table width="100%"  class="cont tr_color">
+                                            <tr class="c_json">
+                                                <th>编号</th>
+                                                <th>商品名称</th>
+                                                <th>货号</th>
+                                                <th>价格</th>
+                                                <th>商品规格</th>
+                                                <th>是否上架</th>
+                                                <th>精品</th>
+                                                <th>新品</th>
+                                                <th>热销</th>
+                                                <th>推荐排序</th>
+                                                <th>库存</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            <!--
+                                                                                        <?php  foreach($arr as $v){?>
+                                                                                        <tr align="center" class="d" id="<?php echo $v['g_id']?>">
+                                                                                            <td><?php echo $v['g_id'] ?></td>
+                                                                                            <td><?php echo $v['g_name'] ?></td>
+                                                                                            <td><?php echo $v['g_mark'] ?></td>
+                                                                                            <td><?php echo $v['g_price'] ?></td>
+                                                                                            <td ><img class="check" name="g_type"  c_id="<?php echo $v['g_type'] ?>" src="<?php if($v['g_type']=='1'){
+                                                                                                                            echo base_url('Images/yes.gif');
+                                                                                                }else{
+                                                                                                             echo base_url('Images/no.gif');
+                                                                                                 }?>"/></td>
+                                                                                            <td><img class="check" name="g_boutique"  c_id="<?php echo $v['g_boutique'] ?>" src="<?php if($v['g_boutique']=='1'){
+                                                                                                                            echo base_url('Images/yes.gif');
+                                                                                                }else{
+                                                                                                             echo base_url('Images/no.gif');
+                                                                                                 }?>"/></td>
+                                                                                            <td><img class="check" name="g_new" c_id="<?php echo $v['g_new'] ?>" src="<?php if($v['g_new']=='1'){
+                                                                                                                            echo base_url('Images/yes.gif');
+                                                                                                }else{
+                                                                                                             echo base_url('Images/no.gif');
+                                                                                                 }?>"/></td>
+                                                                                            <td><img class="check" name="g_hot" c_id="<?php echo $v['g_hot'] ?>" src="<?php if($v['g_hot']=='1'){
+                                                                                                                            echo base_url('Images/yes.gif');
+                                                                                                }else{
+                                                                                                             echo base_url('Images/no.gif');
+                                                                                                 }?>"/></td>
+                                                                                            <td><?php echo $v['g_sort'] ?></td>
+                                                                                            <td><?php echo $v['g_num'] ?></td>
+                                                                                            <td>编辑 | 删除</td>
+                                                                                        </tr>
+                                                                                        <?php }?>
+                                                                                        -->
+                                        </table>
+                                    </form>
+                                   <span class="a_page" style="float: right">
+                                       <!--
+                                       <?php echo $page ?>
+                                       -->
+                                   </span>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                    <td width="2%">&nbsp;</td>
+                </tr>
+                <!-- 添加栏目结束 -->
+                <tr>
+                    <td height="40" colspan="4">
+                        <table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+                            <tr><td></td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="2%">&nbsp;</td>
+                    <td width="51%" class="left_txt">
+                        <img src="<?php  echo base_url('Images/icon_mail.gif')?>" width="16" height="11"> 客户服务邮箱：rainman@foxmail.com<br />
+                        <img src="<?php  echo base_url('Images/icon_phone.gif')?>" width="17" height="14"> 官方网站：<a href="http://www.mycodes.net/" target="_blank">源码之家</a>
+                    </td>
+                    <td>&nbsp;</td><td>&nbsp;</td>
+                </tr>
+            </table>
+        </td>
+        <td background="<?php  echo base_url('Images/mail_right_bg.gif')?>">&nbsp;</td>
+    </tr>
+    <!-- jquery -->
+    <script src="<?php echo base_url('public/jquery-2.1.4.min.js')?>"></script>
+    <script>
+        $(document).ready(function(){
+            cg_name=''
+            cg_class=0
+            cg_type=''
+            jqpage(1)
+        });
+
+        //jQuery 搜索
+        $(".check_name").click(function(){
+            cg_name=$(".cg_name").val()
+            cg_class=$(".cg_class").val()
+            $(":checked").each(function(i,item){
+                cg_type=''
+                if(i>0){
+                    cg_type=cg_type+" and "+$(this).val()+"=1"
+                }
+            })
+            jqpage(1)
+        })
+        //jquery 分页
+        function jqpage(a_page){
+            $.ajax({
+                type: "POST",
+                url: "<?php echo site_url('Good/ajax_page')?>",
+                data: "a_page="+a_page+"&&g_name="+cg_name+"&&c_id="+cg_class+"&&cg_type="+cg_type ,
+                dataType: "json",
+                success: function(msg){
+                    var json=''
+                    $.each(msg.arr,function(i,item){
+                        if(item.g_type=='1'){
+                            item.u_type="<?php echo base_url('Images/yes.gif')?>"
+                        }else{
+                            item.u_type="<?php echo base_url('Images/no.gif')?>"
+                        }
+
+                        if(item.g_boutique=='1'){
+                            item.u_boutique="<?php echo base_url('Images/yes.gif')?>"
+                        }else{
+                            item.u_boutique="<?php echo base_url('Images/no.gif')?>"
+                        }
+
+                        if(item.g_new=='1'){
+                            item.u_new="<?php echo base_url('Images/yes.gif')?>"
+                        }else{
+                            item.u_new="<?php echo base_url('Images/no.gif')?>"
+                        }
+
+                        if(item.g_hot=='1'){
+                            item.u_hot="<?php echo base_url('Images/yes.gif')?>"
+                        }else{
+                            item.u_hot="<?php echo base_url('Images/no.gif')?>"
+                        }
+
+                        json=json+"<tr align='center' class='d' id="+item.g_id+">"+
+                        "<td>"+item.g_id+"</td>"+
+                        "<td>"+item.g_name+"</td>"+
+                        "<td>"+item.g_mark+"</td>"+
+                        "<td>"+item.g_price+"</td>" +
+                        "<td><a href='"+"<?php echo site_url('Good/g_type');?>?g_id="+item.g_id+"'>增加类型</a>|<a href='"+"<?php echo site_url('Good/g_type_list');?>?g_id="+item.g_id+"'>查看类型</a></td>" +
+                        "<td >" +
+                        "<img class='check' name='g_type'  c_id="+item.g_type+" src="+'"'+item.u_type+'"'+"/></td>"   +
+                        "<td >" +
+                        "<img class='check' name='g_boutique'  c_id="+item.g_boutique+" src="+'"'+item.u_boutique+'"'+"/></td>"   +
+                        "<td >" +
+                        "<img class='check' name='g_new'  c_id="+item.g_new+" src="+'"'+item.u_new+'"'+"/></td>"   +
+                        "<td >" +
+                        "<img class='check' name='g_hot'  c_id="+item.g_hot+" src="+'"'+item.u_hot+'"'+"/></td>"   +
+                        "<td>"+item.g_sort+"</td>"+
+                        "<td>"+item.g_num+"</td>"+
+                        "<td>编辑 | 删除</td>"+
+                        "</tr>"
+                    })
+                    $('tr.d').remove()
+                    $('.c_json').after(json)
+                    $('.a_page').html(msg.page)
+                }
+            });
+        }
+        $(document).on("click",".check",function(){
+            var name=$(this).attr('name')
+            var c_id=$(this).attr('c_id')
+            var g_id=$(this).parent().parent().attr('id')
+            if(c_id=='1'){
+                var type='0'
+                $(this).attr('c_id','0')
+                $(this).attr('src',"<?php echo base_url('Images/no.gif')?>")
+            }else{
+                var type='1'
+                $(this).attr('c_id','1')
+                $(this).attr('src',"<?php echo base_url('Images/yes.gif')?>")
+            }
+            $.ajax({
+                type: "POST",
+                url: "<?php echo site_url('Good/up_type')?>",
+                data: "name="+name+"&&g_id="+g_id+"&&type="+type,
+                success: function(msg){
+                }
+            });
+        });
+        //即点既改商品状态
+        //        $(".check").click(function(){
+        //             var name=$(this).attr('name')
+        //             var c_id=$(this).attr('c_id')
+        //             var g_id=$(this).parent().parent().attr('id')
+        //             if(c_id=='1'){
+        //             var type='0'
+        //             $(this).attr('c_id','0')
+        //             $(this).attr('src',"<?php echo base_url('Images/no.gif')?>")
+        //             }else{
+        //             var type='1'
+        //             $(this).attr('c_id','1')
+        //             $(this).attr('src',"<?php echo base_url('Images/yes.gif')?>")
+        //             }
+        //             $.ajax({
+        //             type: "POST",
+        //             url: "<?php echo site_url('Good/up_type')?>",
+        //             data: "name="+name+"&&g_id="+g_id+"&&type="+type,
+        //             success: function(msg){
+        //             }
+        //             });
+        //        })
+
+    </script>
+    <!-- 底部部分 -->
+    <tr>
+        <td valign="bottom" background="<?php  echo base_url('Images/mail_left_bg.gif')?>">
+            <img src="<?php  echo base_url('Images/buttom_left.gif')?>" width="17" height="17" />
+        </td>
+        <td background="<?php  echo base_url('Images/buttom_bgs.gif')?>">
+            <img src="<?php  echo base_url('Images/buttom_bgs.gif')?>" width="17" height="17">
+        </td>
+        <td valign="bottom" background="<?php  echo base_url('Images/mail_right_bg.gif')?>">
+            <img src="<?php  echo base_url('Images/buttom_right.gif')?>" width="16" height="17" />
+        </td>
+    </tr>
+</table>
+</body>
+</html>

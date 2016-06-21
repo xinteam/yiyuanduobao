@@ -36,10 +36,11 @@ class User extends CI_Controller {
         }else{
             $data["goods_people"]="";
         }
-        $config['upload_path'] = './public/uploads/';
+        //print_r($data);die;
+        $config['upload_path'] = 'yiyuanduobao/../../uploads/goods/';
         $config['allowed_types'] = 'gif|jpg|png';
         $this->load->library('upload', $config);
-        if( ! $this->upload->do_upload('goods_img'))
+        if(!$this->upload->do_upload('goods_img'))
         {
             $error = array('error' => $this->upload->display_errors());exit;
             $this->load->view('User/index', $error);
@@ -48,7 +49,7 @@ class User extends CI_Controller {
         {
             $datas = array('upload_data' => $this->upload->data());
             //print_r($datas);exit;
-            $data['goods_img']="public/uploads/".$datas['upload_data']['file_name'];
+            $data['goods_img']="yiyuanduobao/../../uploads/goods/".$datas['upload_data']['file_name'];
             //print_r($data);die;
             $arr=$this->db->insert('wi_goods',$data);
             if($arr){
