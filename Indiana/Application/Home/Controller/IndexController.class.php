@@ -91,11 +91,33 @@ class IndexController extends Controller {
 		$goods = D('wi_goods');
 		$goods_hot = $goods->order('goods_people desc')->limit(5)->select();
 		$this->assign('goods_hot',$goods_hot);
+		//最新揭晓
+		$type = D('wi_type');
+		$g_type = $type->select();
+		$this->assign('g_type',$g_type);
 		//最新商品展示
 		$goods_new = $goods->order('goods_id desc')->limit(5)->select();
 		$this->assign('goods_new',$goods_new);
-		
+		//苹果专区
+		$goods_apple = $goods->where('type_id=5')->order('goods_id desc')->limit(4)->select();
+		$this->assign('goods_apple',$goods_apple);
+		//手机数码专区
+		$goods_tel = $goods->where('type_id=6')->order('goods_id desc')->limit(4)->select();
+		$this->assign('goods_tel',$goods_tel);
+		//代金卷类
+		$goods_dai = $goods->where('type_id=4')->order('goods_id desc')->limit(4)->select();
+		$this->assign('goods_dai',$goods_dai);
+
 		$this->display('Index/index');
+	}
+	
+	//首页分类搜索功能
+	public function goods_search(){
+		$id = $_GET['id'];
+		$type = D('wi_goods');
+		$gg_type = $type->where("type_id='$id'")->order('goods_id desc')->select();
+		$this->assign('gg_type',$gg_type);
+		$this->display('Index/goods_search');
 	}
 	
 	
