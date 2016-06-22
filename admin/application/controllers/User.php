@@ -49,7 +49,7 @@ class User extends CI_Controller {
         {
             $datas = array('upload_data' => $this->upload->data());
             //print_r($datas);exit;
-            $data['goods_img']="yiyuanduobao/../../uploads/goods/".$datas['upload_data']['file_name'];
+            $data['goods_img']="../../uploads/goods/".$datas['upload_data']['file_name'];
             //print_r($data);die;
             $arr=$this->db->insert('wi_goods',$data);
             if($arr){
@@ -59,10 +59,11 @@ class User extends CI_Controller {
             }
         }
     }
-    //用户列表
+    //商品列表
     public function user_list(){
-        $query['arr']=$this->db->query("select * from wi_user")->result_array();
-       // print_r($query);die;
+        $query['arr']=$this->db->query("select * from wi_goods inner JOIN wi_type on  wi_goods.type_id=wi_type.type_id INNER JOIN wi_price on wi_goods.price_id=wi_price.price_id order by goods_id desc;")->result_array();
+        //$query['arr']=$this->db->query("select * from wi_type")->result_array();
+        //print_r($query);die;
         $this->load->view('user/cat_manage.html',$query);
     }
 
