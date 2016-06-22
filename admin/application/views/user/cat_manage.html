@@ -41,10 +41,6 @@
                                         <?php }}?>
                                     </select>
                                     <input class="cg_name" type="text" style="height: 23px" placeholder="请输入商品名称！"/>
-                                    <input class="cg_type" type="checkbox" value="g_type"/>上架
-                                    <input class="cg_boutique" type="checkbox" value="g_boutique"/>精品
-                                    <input class="cg_new" type="checkbox" value="g_new"/>新品
-                                    <input class="cg_hot" type="checkbox" value="g_hot"/>热销
                                     <input type="button"   class="check_name" value="搜索"/>
                                 </td>
                             </tr>
@@ -71,50 +67,33 @@
                                             <tr class="c_json">
                                                 <th>编号</th>
                                                 <th>商品名称</th>
-                                                <th>货号</th>
+                                                <th>商品图片</th>
                                                 <th>价格</th>
-                                                <th>商品规格</th>
+                                                <th>商品类型</th>
+                                                <th>描述</th>
                                                 <th>是否上架</th>
-                                                <th>精品</th>
-                                                <th>新品</th>
-                                                <th>热销</th>
-                                                <th>推荐排序</th>
-                                                <th>库存</th>
+                                                <th>区间分类</th>
+                                                <th>抢购人次</th>
                                                 <th>操作</th>
                                             </tr>
-                                            <!--
-                                                                                        <?php  foreach($arr as $v){?>
-                                                                                        <tr align="center" class="d" id="<?php echo $v['g_id']?>">
-                                                                                            <td><?php echo $v['g_id'] ?></td>
-                                                                                            <td><?php echo $v['g_name'] ?></td>
-                                                                                            <td><?php echo $v['g_mark'] ?></td>
-                                                                                            <td><?php echo $v['g_price'] ?></td>
-                                                                                            <td ><img class="check" name="g_type"  c_id="<?php echo $v['g_type'] ?>" src="<?php if($v['g_type']=='1'){
-                                                                                                                            echo base_url('Images/yes.gif');
-                                                                                                }else{
-                                                                                                             echo base_url('Images/no.gif');
-                                                                                                 }?>"/></td>
-                                                                                            <td><img class="check" name="g_boutique"  c_id="<?php echo $v['g_boutique'] ?>" src="<?php if($v['g_boutique']=='1'){
-                                                                                                                            echo base_url('Images/yes.gif');
-                                                                                                }else{
-                                                                                                             echo base_url('Images/no.gif');
-                                                                                                 }?>"/></td>
-                                                                                            <td><img class="check" name="g_new" c_id="<?php echo $v['g_new'] ?>" src="<?php if($v['g_new']=='1'){
-                                                                                                                            echo base_url('Images/yes.gif');
-                                                                                                }else{
-                                                                                                             echo base_url('Images/no.gif');
-                                                                                                 }?>"/></td>
-                                                                                            <td><img class="check" name="g_hot" c_id="<?php echo $v['g_hot'] ?>" src="<?php if($v['g_hot']=='1'){
-                                                                                                                            echo base_url('Images/yes.gif');
-                                                                                                }else{
-                                                                                                             echo base_url('Images/no.gif');
-                                                                                                 }?>"/></td>
-                                                                                            <td><?php echo $v['g_sort'] ?></td>
-                                                                                            <td><?php echo $v['g_num'] ?></td>
-                                                                                            <td>编辑 | 删除</td>
-                                                                                        </tr>
-                                                                                        <?php }?>
-                                                                                        -->
+                                            <?php foreach($arr as $v) { ?>
+                                                <tr>
+                                                    <td><?php echo $v['goods_id']?></td>
+                                                    <td><?php echo $v['goods_name']?></td>
+                                                    <td><img src="" alt=""/></td>
+                                                    <td><?php echo $v['goods_price']?></td>
+                                                    <td><?php echo $v['type_name']?></td>
+                                                    <td><?php echo $v['goods_desc']?></td>
+                                                    <td><?php if($v['goods_status']==1){
+                                                        echo "上架";
+                                                    }else{
+                                                        echo "下架";
+                                                    }?></td>
+                                                    <td><?php echo $v['price_name']?></td>
+                                                    <td><?php echo $v['goods_people']?>人</td>
+                                                    <td>删除|修改</td>
+                                                </tr>
+                                            <?php } ?>
                                         </table>
                                     </form>
                                    <span class="a_page" style="float: right">
@@ -171,65 +150,6 @@
             })
             jqpage(1)
         })
-        //jquery 分页
-        function jqpage(a_page){
-            $.ajax({
-                type: "POST",
-                url: "<?php echo site_url('Good/ajax_page')?>",
-                data: "a_page="+a_page+"&&g_name="+cg_name+"&&c_id="+cg_class+"&&cg_type="+cg_type ,
-                dataType: "json",
-                success: function(msg){
-                    var json=''
-                    $.each(msg.arr,function(i,item){
-                        if(item.g_type=='1'){
-                            item.u_type="<?php echo base_url('Images/yes.gif')?>"
-                        }else{
-                            item.u_type="<?php echo base_url('Images/no.gif')?>"
-                        }
-
-                        if(item.g_boutique=='1'){
-                            item.u_boutique="<?php echo base_url('Images/yes.gif')?>"
-                        }else{
-                            item.u_boutique="<?php echo base_url('Images/no.gif')?>"
-                        }
-
-                        if(item.g_new=='1'){
-                            item.u_new="<?php echo base_url('Images/yes.gif')?>"
-                        }else{
-                            item.u_new="<?php echo base_url('Images/no.gif')?>"
-                        }
-
-                        if(item.g_hot=='1'){
-                            item.u_hot="<?php echo base_url('Images/yes.gif')?>"
-                        }else{
-                            item.u_hot="<?php echo base_url('Images/no.gif')?>"
-                        }
-
-                        json=json+"<tr align='center' class='d' id="+item.g_id+">"+
-                        "<td>"+item.g_id+"</td>"+
-                        "<td>"+item.g_name+"</td>"+
-                        "<td>"+item.g_mark+"</td>"+
-                        "<td>"+item.g_price+"</td>" +
-                        "<td><a href='"+"<?php echo site_url('Good/g_type');?>?g_id="+item.g_id+"'>增加类型</a>|<a href='"+"<?php echo site_url('Good/g_type_list');?>?g_id="+item.g_id+"'>查看类型</a></td>" +
-                        "<td >" +
-                        "<img class='check' name='g_type'  c_id="+item.g_type+" src="+'"'+item.u_type+'"'+"/></td>"   +
-                        "<td >" +
-                        "<img class='check' name='g_boutique'  c_id="+item.g_boutique+" src="+'"'+item.u_boutique+'"'+"/></td>"   +
-                        "<td >" +
-                        "<img class='check' name='g_new'  c_id="+item.g_new+" src="+'"'+item.u_new+'"'+"/></td>"   +
-                        "<td >" +
-                        "<img class='check' name='g_hot'  c_id="+item.g_hot+" src="+'"'+item.u_hot+'"'+"/></td>"   +
-                        "<td>"+item.g_sort+"</td>"+
-                        "<td>"+item.g_num+"</td>"+
-                        "<td>编辑 | 删除</td>"+
-                        "</tr>"
-                    })
-                    $('tr.d').remove()
-                    $('.c_json').after(json)
-                    $('.a_page').html(msg.page)
-                }
-            });
-        }
         $(document).on("click",".check",function(){
             var name=$(this).attr('name')
             var c_id=$(this).attr('c_id')
