@@ -204,9 +204,12 @@
 								<a href="goods_list/index.html" tppabs="http://www.123kg.cn/goods_list/index.html" class="pullDownTitle">全部商品分类</a>
 							</h2>
 														<ul class="pullDownList">
+														<?php foreach($g_type as $v){ ?>
 																<li><i class="listi1"></i> <a
-									href="goods_list/200_0_0.html" tppabs="http://www.123kg.cn/goods_list/200_0_0.html"
-									target="_blank">汽车专区</a></li> 								<li><i class="listi2"></i> <a
+									href="__URL__/goods_search?id={$v.type_id}" tppabs="http://www.123kg.cn/goods_list/200_0_0.html"
+									target="_blank">{$v.type_name}</a></li> 		
+														<?php } ?>
+									<!-- <li><i class="listi2"></i> <a
 									href="goods_list/185_0_0.html" tppabs="http://www.123kg.cn/goods_list/185_0_0.html"
 									target="_blank">苹果专区</a></li> 								<li><i class="listi3"></i> <a
 									href="goods_list/5_0_0.html" tppabs="http://www.123kg.cn/goods_list/5_0_0.html"
@@ -222,7 +225,7 @@
 									href="goods_list/168_0_0.html" tppabs="http://www.123kg.cn/goods_list/168_0_0.html"
 									target="_blank">食品干货</a></li> 								<li><i class="listi9"></i> <a
 									href="goods_list/76_0_0.html" tppabs="http://www.123kg.cn/goods_list/76_0_0.html"
-									target="_blank">礼品玩具</a></li> 	
+									target="_blank">礼品玩具</a></li>  -->	
 									</ul>
 									
 							<!-- 下拉详细列表具体分类 -->
@@ -1151,11 +1154,11 @@
 				<div class="h-wares-con">
 					<ul>
 						<li class="h-hot-pic cart-pic"><a
-							href="goods/147667.html" ><img alt="{$v.goods_name}"
+							href="__URL__/goods_info?goods_id={$v.goods_id}" ><img alt="{$v.goods_name}"
 								src="__PUBLIC__/{$v.goods_img}" ></a> <i
 							class="goods_xp"></i></li>
 												<li class="h-hot-name"><a
-							href="goods/147667.htm" >{$v.goods_name}</a></li>
+							href="__URL__/goods_info?goods_id={$v.goods_id}" >{$v.goods_name}</a></li>
 						<li class="gray">价值：￥{$v.goods_price}</li>
 						<li class="h-progress">
 							<dl class="m-progress">
@@ -1170,7 +1173,7 @@
 								</dd>
 							</dl>
 						</li>
-						<li><a href="goods/147667.html" tppabs="http://www.123kg.cn/goods/147667.html" class="u-imm"
+						<li><a href="__URL__/goods_info?goods_id={$v.goods_id}" tppabs="http://www.123kg.cn/goods/147667.html" class="u-imm"
 							target="_blank" title="只要1元，即可购买">立即快购</a>
 							<a href="javascript:;" title="加入到购物车" class="u-cart"> <s>
 								<img src="__PUBLIC__/238.png" style="width:30px;height:30px">
@@ -1353,26 +1356,28 @@
 			 			<div class="g-title">
 				<h3 class="fl">苹果专区</h3>
 				<div class="m-other fr">
-					<a href="goods_list/185_0_0.html" tppabs="http://www.123kg.cn/goods_list/185_0_0.html" target="_blank" title="更多" class="u-more">更多</a>
+					<a href="__URL__/goods_search?id=5" target="_blank" title="更多" class="u-more">更多</a>
 				</div>
 			</div>
 			<div class="k-wares">
 				<div class="k-img">
 					<a href="javascript:;" style="cursor: default;"><img style="cursor: pointer;"
 						src="__PUBLIC__/statics/uploads/cateimg/20160425/67937408575486.jpg" tppabs="http://www.123kg.cn/statics/uploads/cateimg/20160425/67937408575486.jpg"   alt="" 
-						onclick="javascript:window.location.href='goods_list/185_0_0.html'/*tpa=http://www.123kg.cn/goods_list/185_0_0.html*/"></a>
+						onclick="javascript:window.location.href='__URL__/goods_search?id=5'/*tpa=http://www.123kg.cn/goods_list/185_0_0.html*/"></a>
 				</div>
-								<div class="h-wares-list">
+				
+					<?php foreach($goods_apple as $v){ ?>
+					
+								<div class="h-wares-list">		
 					<div class="h-wares-con">
 						<ul>
 							<li class="h-hot-pic cart-pic"><a
-								href="goods/147805.html" tppabs="http://www.123kg.cn/goods/147805.html" target="_blank"
-								title="苹果（Apple）iPhone 6s 64G版 4G手机"><img alt="苹果（Apple）iPhone 6s 64G版 4G手机"
+								href="__URL__/goods_info?goods_id={$v.goods_id}"><img alt="{$v.goods_name}"
 									src="__PUBLIC__/statics/uploads/shopimg/20150925/38784011152088.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20150925/38784011152088.jpg"></a></li>
 														<li class="h-hot-name"><a
-								href="goods/147805.htm" tppabs="http://www.123kg.cn/goods/147805" target="_blank"
-								title="苹果（Apple）iPhone 6s 64G版 4G手机">苹果（Apple）iPhone 6s 64G版 4G手机</a></li>
-							<li class="gray">价值：￥6476.00</li>
+								href="__URL__/goods_info?goods_id={$v.goods_id}" target="_blank"
+								>{$v.goods_name}</a></li>
+							<li class="gray">价值：￥{$v.goods_price}</li>
 							<li class="h-progress">
 								<dl class="m-progress">
 									<dt>
@@ -1389,7 +1394,9 @@
 							<li><a href="goods/147805.htm" tppabs="http://www.123kg.cn/goods/147805" class="u-imm"
 								target="_blank" title="只要1元，即可购买">立即快购</a>
 								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
+									<s> 
+									<img src="__PUBLIC__/238.png" style="width:30px;height:30px">
+									</s>
 							</a></li>
 							<div class="Curbor_id" style="display: none;">
 								147805</div>
@@ -1400,144 +1407,30 @@
 						</ul>
 					</div>
 				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147757.html" tppabs="http://www.123kg.cn/goods/147757.html" target="_blank"
-								title="苹果/Apple iPhone SE 64GB "><img alt="苹果/Apple iPhone SE 64GB "
-									src="__PUBLIC__/statics/uploads/shopimg/20160324/90206875785362.png" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160324/90206875785362.png"></a></li>
-							<span class="ten"></span>							<li class="h-hot-name"><a
-								href="goods/147757.htm" tppabs="http://www.123kg.cn/goods/147757" target="_blank"
-								title="苹果/Apple iPhone SE 64GB ">苹果/Apple iPhone SE 64GB </a></li>
-							<li class="gray">价值：￥4620.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 67.965367965368%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>314</em>已参与</span>
-										<span class="gray6 fl"><em>462</em>总需人次</span>
-										<span class="blue fr"><em>148</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147757.htm" tppabs="http://www.123kg.cn/goods/147757" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147757</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								10.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								148</div>
-						</ul>
+				<?php } ?>
+								
 					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147610.html" tppabs="http://www.123kg.cn/goods/147610.html" target="_blank"
-								title="苹果/Apple iPad Pro 9.7英寸 32GB 港版 颜色随机"><img alt="苹果/Apple iPad Pro 9.7英寸 32GB 港版 颜色随机"
-									src="__PUBLIC__/statics/uploads/shopimg/20160329/49069161218323.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160329/49069161218323.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147610.htm" tppabs="http://www.123kg.cn/goods/147610" target="_blank"
-								title="苹果/Apple iPad Pro 9.7英寸 32GB 港版 颜色随机">苹果/Apple iPad Pro 9.7英寸 32GB 港版 颜色随机</a></li>
-							<li class="gray">价值：￥4958.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 87.878176684147%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>4357</em>已参与</span>
-										<span class="gray6 fl"><em>4958</em>总需人次</span>
-										<span class="blue fr"><em>601</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147610.htm" tppabs="http://www.123kg.cn/goods/147610" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147610</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								601</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/146929.html" tppabs="http://www.123kg.cn/goods/146929.html" target="_blank"
-								title="Apple/苹果 iMac:3.3GHz处理器2TB存储 27寸 Retina 5K显示屏 港版 颜色随机发    "><img alt="Apple/苹果 iMac:3.3GHz处理器2TB存储 27寸 Retina 5K显示屏 港版 颜色随机发    "
-									src="__PUBLIC__/statics/uploads/shopimg/20160308/60948660403432.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160308/60948660403432.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/146929.htm" tppabs="http://www.123kg.cn/goods/146929" target="_blank"
-								title="Apple/苹果 iMac:3.3GHz处理器2TB存储 27寸 Retina 5K显示屏 港版 颜色随机发    ">Apple/苹果 iMac:3.3GHz处理器2TB存储 27寸 Retina 5K显示屏 港版 颜色随机发    </a></li>
-							<li class="gray">价值：￥19196.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 97.728693477808%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>18760</em>已参与</span>
-										<span class="gray6 fl"><em>19196</em>总需人次</span>
-										<span class="blue fr"><em>436</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/146929.htm" tppabs="http://www.123kg.cn/goods/146929" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								146929</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								436</div>
-						</ul>
-					</div>
-				</div>
-							</div>
 			 			<div class="g-title">
 				<h3 class="fl">手机数码</h3>
 				<div class="m-other fr">
-					<a href="goods_list/5_0_0.html" tppabs="http://www.123kg.cn/goods_list/5_0_0.html" target="_blank" title="更多" class="u-more">更多</a>
+					<a href="__URL__/goods_search?id=6" target="_blank" title="更多" class="u-more">更多</a>
 				</div>
 			</div>
 			<div class="k-wares">
 				<div class="k-img">
 					<a href="javascript:;" style="cursor: default;"><img style="cursor: pointer;"
 						src="__PUBLIC__/statics/uploads/cateimg/20160425/91771163575502.jpg" tppabs="http://www.123kg.cn/statics/uploads/cateimg/20160425/91771163575502.jpg"   alt="" 
-						onclick="javascript:window.location.href='goods_list/5_0_0.html'/*tpa=http://www.123kg.cn/goods_list/5_0_0.html*/"></a>
+						onclick="javascript:window.location.href='__URL__/goods_search?id=6'/*tpa=http://www.123kg.cn/goods_list/5_0_0.html*/"></a>
 				</div>
+				<?php foreach($goods_tel as $v ){ ?>
 								<div class="h-wares-list">
 					<div class="h-wares-con">
 						<ul>
 							<li class="h-hot-pic cart-pic"><a
-								href="goods/147872.html" tppabs="http://www.123kg.cn/goods/147872.html" target="_blank"
-								title="Lenovo/联想 电脑游戏笔记本 小新 700-15ISK旗舰版 8G/1T/独显  Core/酷睿 i5"><img alt="Lenovo/联想 电脑游戏笔记本 小新 700-15ISK旗舰版 8G/1T/独显  Core/酷睿 i5"
-									src="__PUBLIC__/statics/uploads/shopimg/20160510/66613666846300.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160510/66613666846300.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147872.htm" tppabs="http://www.123kg.cn/goods/147872" target="_blank"
-								title="Lenovo/联想 电脑游戏笔记本 小新 700-15ISK旗舰版 8G/1T/独显  Core/酷睿 i5">Lenovo/联想 电脑游戏笔记本 小新 700-15ISK旗舰版 8G/1T/独显  Core/酷睿 i5</a></li>
-							<li class="gray">价值：￥6216.00</li>
+								href="__PUBLIC__/goods_info?goods_id={$v.goods_id}" target="_blank"><img alt="{$v.goods_name}"
+									src="__PUBLIC__/{$v.goods_img}" ></a></li>
+														<li class="h-hot-name"><a href="__PUBLIC__/goods_info?goods_id={$v.goods_id}m" target="_blank">{$v.goods_name}</a></li>
+							<li class="gray">价值：￥{$v.goods_price}</li>
 							<li class="h-progress">
 								<dl class="m-progress">
 									<dt>
@@ -1551,10 +1444,10 @@
 									</dd>
 								</dl>
 							</li>
-							<li><a href="goods/147872.htm" tppabs="http://www.123kg.cn/goods/147872" class="u-imm"
+							<li><a href="__PUBLIC__/goods_info?goods_id={$v.goods_id}" tppabs="http://www.123kg.cn/goods/147872" class="u-imm"
 								target="_blank" title="只要1元，即可购买">立即快购</a>
 								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
+									<s> <img src="__PUBLIC__/238.png" style="width:30px;height:30px"></s>
 							</a></li>
 							<div class="Curbor_id" style="display: none;">
 								147872</div>
@@ -1565,144 +1458,33 @@
 						</ul>
 					</div>
 				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147839.html" tppabs="http://www.123kg.cn/goods/147839.html" target="_blank"
-								title="Samsung/三星 Galaxy S7 Edge SM-G9350 全网通 32GB 官方标配"><img alt="Samsung/三星 Galaxy S7 Edge SM-G9350 全网通 32GB 官方标配"
-									src="__PUBLIC__/statics/uploads/shopimg/20160315/20472347007631.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160315/20472347007631.jpg"></a></li>
-							<span class="ten"></span>							<li class="h-hot-name"><a
-								href="goods/147839.htm" tppabs="http://www.123kg.cn/goods/147839" target="_blank"
-								title="Samsung/三星 Galaxy S7 Edge SM-G9350 全网通 32GB 官方标配">Samsung/三星 Galaxy S7 Edge SM-G9350 全网通 32GB 官方标配</a></li>
-							<li class="gray">价值：￥6420.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 27.881619937695%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>179</em>已参与</span>
-										<span class="gray6 fl"><em>642</em>总需人次</span>
-										<span class="blue fr"><em>463</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147839.htm" tppabs="http://www.123kg.cn/goods/147839" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147839</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								10.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								463</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147410.html" tppabs="http://www.123kg.cn/goods/147410.html" target="_blank"
-								title="【新品上市】Meizu/魅族 PRO 6全网通公开版 32GB  颜色随机发"><img alt="【新品上市】Meizu/魅族 PRO 6全网通公开版 32GB  颜色随机发"
-									src="__PUBLIC__/statics/uploads/shopimg/20160419/94322714032826.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160419/94322714032826.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147410.htm" tppabs="http://www.123kg.cn/goods/147410" target="_blank"
-								title="【新品上市】Meizu/魅族 PRO 6全网通公开版 32GB  颜色随机发">【新品上市】Meizu/魅族 PRO 6全网通公开版 32GB  颜色随机发</a></li>
-							<li class="gray">价值：￥2998.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 60.173448965977%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>1804</em>已参与</span>
-										<span class="gray6 fl"><em>2998</em>总需人次</span>
-										<span class="blue fr"><em>1194</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147410.htm" tppabs="http://www.123kg.cn/goods/147410" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147410</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								1194</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147635.html" tppabs="http://www.123kg.cn/goods/147635.html" target="_blank"
-								title="Nikon/尼康 D3300入门单反相机 18-55mm 二代镜头 D3300套机"><img alt="Nikon/尼康 D3300入门单反相机 18-55mm 二代镜头 D3300套机"
-									src="__PUBLIC__/statics/uploads/shopimg/20160301/80810560798141.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160301/80810560798141.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147635.htm" tppabs="http://www.123kg.cn/goods/147635" target="_blank"
-								title="Nikon/尼康 D3300入门单反相机 18-55mm 二代镜头 D3300套机">Nikon/尼康 D3300入门单反相机 18-55mm 二代镜头 D3300套机</a></li>
-							<li class="gray">价值：￥2878.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 39.298123697012%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>1131</em>已参与</span>
-										<span class="gray6 fl"><em>2878</em>总需人次</span>
-										<span class="blue fr"><em>1747</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147635.htm" tppabs="http://www.123kg.cn/goods/147635" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147635</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								1747</div>
-						</ul>
-					</div>
-				</div>
+				<?php } ?>
+								
 							</div>
 			 			<div class="g-title">
 				<h3 class="fl">代金券类</h3>
 				<div class="m-other fr">
-					<a href="goods_list/75_0_0.html" tppabs="http://www.123kg.cn/goods_list/75_0_0.html" target="_blank" title="更多" class="u-more">更多</a>
+					<a href="__URL__/goods_search?id=4"target="_blank" title="更多" class="u-more">更多</a>
 				</div>
 			</div>
 			<div class="k-wares">
 				<div class="k-img">
 					<a href="javascript:;" style="cursor: default;"><img style="cursor: pointer;"
 						src="__PUBLIC__/statics/uploads/cateimg/20160425/70741204575519.jpg" tppabs="http://www.123kg.cn/statics/uploads/cateimg/20160425/70741204575519.jpg"   alt="" 
-						onclick="javascript:window.location.href='goods_list/75_0_0.html'/*tpa=http://www.123kg.cn/goods_list/75_0_0.html*/"></a>
+						onclick="javascript:window.location.href='__URL__/goods_search?id=4'/*tpa=http://www.123kg.cn/goods_list/75_0_0.html*/"></a>
 				</div>
+				<?php foreach($goods_dai as $v){ ?>
 								<div class="h-wares-list">
 					<div class="h-wares-con">
 						<ul>
 							<li class="h-hot-pic cart-pic"><a
-								href="goods/147817.html" tppabs="http://www.123kg.cn/goods/147817.html" target="_blank"
-								title="京东购物电子卡 京东E卡 面值1000元 仅可购买京东网上商城的自营商品"><img alt="京东购物电子卡 京东E卡 面值1000元 仅可购买京东网上商城的自营商品"
-									src="__PUBLIC__/statics/uploads/shopimg/20151030/13020736200462.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20151030/13020736200462.jpg"></a></li>
+								href="__PUBLIC__/goods_info?goods_id={$v.goods_id}" target="_blank">
+								<img alt="{$v.goods_name}"
+									src="__PUBLIC__/{$v.goods_img}" ></a></li>
 														<li class="h-hot-name"><a
-								href="goods/147817.htm" tppabs="http://www.123kg.cn/goods/147817" target="_blank"
-								title="京东购物电子卡 京东E卡 面值1000元 仅可购买京东网上商城的自营商品">京东购物电子卡 京东E卡 面值1000元 仅可购买京东网上商城的自营商品</a></li>
-							<li class="gray">价值：￥1192.00</li>
+								href="__PUBLIC__/goods_info?goods_id={$v.goods_id}" tppabs="http://www.123kg.cn/goods/147817" target="_blank"
+								title="京东购物电子卡 京东E卡 面值1000元 仅可购买京东网上商城的自营商品">{$v.goods_name}</a></li>
+							<li class="gray">价值：￥{$v.goods_price}</li>
 							<li class="h-progress">
 								<dl class="m-progress">
 									<dt>
@@ -1716,7 +1498,7 @@
 									</dd>
 								</dl>
 							</li>
-							<li><a href="goods/147817.htm" tppabs="http://www.123kg.cn/goods/147817" class="u-imm"
+							<li><a href="__PUBLIC__/goods_info?goods_id={$v.goods_id}" class="u-imm"
 								target="_blank" title="只要1元，即可购买">立即快购</a>
 								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
 									<s> </s>
@@ -1730,807 +1512,17 @@
 						</ul>
 					</div>
 				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147675.html" tppabs="http://www.123kg.cn/goods/147675.html" target="_blank"
-								title="话费300元 全国通用 中国移动/联通/电信 获得者请联系客服 按照商品描述领取"><img alt="话费300元 全国通用 中国移动/联通/电信 获得者请联系客服 按照商品描述领取"
-									src="__PUBLIC__/statics/uploads/shopimg/20150911/88154904942895.png" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20150911/88154904942895.png"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147675.htm" tppabs="http://www.123kg.cn/goods/147675" target="_blank"
-								title="话费300元 全国通用 中国移动/联通/电信 获得者请联系客服 按照商品描述领取">话费300元 全国通用 中国移动/联通/电信 获得者请联系客服 按照商品描述领取</a></li>
-							<li class="gray">价值：￥359.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 99.1643454039%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>356</em>已参与</span>
-										<span class="gray6 fl"><em>359</em>总需人次</span>
-										<span class="blue fr"><em>3</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147675.htm" tppabs="http://www.123kg.cn/goods/147675" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147675</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								3</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/146574.html" tppabs="http://www.123kg.cn/goods/146574.html" target="_blank"
-								title="淘宝购物卡 面值20元 支付宝充值"><img alt="淘宝购物卡 面值20元 支付宝充值"
-									src="__PUBLIC__/statics/uploads/shopimg/20160222/63890823127599.png" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160222/63890823127599.png"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/146574.htm" tppabs="http://www.123kg.cn/goods/146574" target="_blank"
-								title="淘宝购物卡 面值20元 支付宝充值">淘宝购物卡 面值20元 支付宝充值</a></li>
-							<li class="gray">价值：￥24.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 50%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>12</em>已参与</span>
-										<span class="gray6 fl"><em>24</em>总需人次</span>
-										<span class="blue fr"><em>12</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/146574.htm" tppabs="http://www.123kg.cn/goods/146574" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								146574</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								12</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/144802.html" tppabs="http://www.123kg.cn/goods/144802.html" target="_blank"
-								title="淘宝购物卡 面值100元 支付宝充值"><img alt="淘宝购物卡 面值100元 支付宝充值"
-									src="__PUBLIC__/statics/uploads/shopimg/20151113/61872241385628.png" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20151113/61872241385628.png"></a></li>
-							<span class="ten"></span>							<li class="h-hot-name"><a
-								href="goods/144802.htm" tppabs="http://www.123kg.cn/goods/144802" target="_blank"
-								title="淘宝购物卡 面值100元 支付宝充值">淘宝购物卡 面值100元 支付宝充值</a></li>
-							<li class="gray">价值：￥120.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 16.666666666667%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>2</em>已参与</span>
-										<span class="gray6 fl"><em>12</em>总需人次</span>
-										<span class="blue fr"><em>10</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/144802.htm" tppabs="http://www.123kg.cn/goods/144802" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								144802</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								10.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								10</div>
-						</ul>
-					</div>
-				</div>
+				<?php } ?>
+								
 							</div>
-			 			<div class="g-title">
-				<h3 class="fl">精品电器</h3>
-				<div class="m-other fr">
-					<a href="goods_list/6_0_0.html" tppabs="http://www.123kg.cn/goods_list/6_0_0.html" target="_blank" title="更多" class="u-more">更多</a>
-				</div>
-			</div>
-			<div class="k-wares">
-				<div class="k-img">
-					<a href="javascript:;" style="cursor: default;"><img style="cursor: pointer;"
-						src="__PUBLIC__/statics/uploads/cateimg/20160425/74412104575536.jpg" tppabs="http://www.123kg.cn/statics/uploads/cateimg/20160425/74412104575536.jpg"   alt="" 
-						onclick="javascript:window.location.href='goods_list/6_0_0.html'/*tpa=http://www.123kg.cn/goods_list/6_0_0.html*/"></a>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147761.html" tppabs="http://www.123kg.cn/goods/147761.html" target="_blank"
-								title="飞利浦 Philips 3D蓝光5.1家庭影院音响 HTB5580精装版"><img alt="飞利浦 Philips 3D蓝光5.1家庭影院音响 HTB5580精装版"
-									src="__PUBLIC__/statics/uploads/shopimg/20160218/99401894760711.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160218/99401894760711.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147761.htm" tppabs="http://www.123kg.cn/goods/147761" target="_blank"
-								title="飞利浦 Philips 3D蓝光5.1家庭影院音响 HTB5580精装版">飞利浦 Philips 3D蓝光5.1家庭影院音响 HTB5580精装版</a></li>
-							<li class="gray">价值：￥5536.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 94.291907514451%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>5220</em>已参与</span>
-										<span class="gray6 fl"><em>5536</em>总需人次</span>
-										<span class="blue fr"><em>316</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147761.htm" tppabs="http://www.123kg.cn/goods/147761" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147761</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								316</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147707.html" tppabs="http://www.123kg.cn/goods/147707.html" target="_blank"
-								title="SIEMENS/西门子 对开门电冰箱 BCD-610W(KA92NV03TI) 双开家用 无霜"><img alt="SIEMENS/西门子 对开门电冰箱 BCD-610W(KA92NV03TI) 双开家用 无霜"
-									src="__PUBLIC__/statics/uploads/shopimg/20160114/68724915738118.png" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160114/68724915738118.png"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147707.htm" tppabs="http://www.123kg.cn/goods/147707" target="_blank"
-								title="SIEMENS/西门子 对开门电冰箱 BCD-610W(KA92NV03TI) 双开家用 无霜">SIEMENS/西门子 对开门电冰箱 BCD-610W(KA92NV03TI) 双开家用 无霜</a></li>
-							<li class="gray">价值：￥7808.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 73.770491803279%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>5760</em>已参与</span>
-										<span class="gray6 fl"><em>7808</em>总需人次</span>
-										<span class="blue fr"><em>2048</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147707.htm" tppabs="http://www.123kg.cn/goods/147707" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147707</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								2048</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147643.html" tppabs="http://www.123kg.cn/goods/147643.html" target="_blank"
-								title="Samsung/三星 液晶电视55寸 UA55JU6800JXXZ曲面4K超高清智能网络"><img alt="Samsung/三星 液晶电视55寸 UA55JU6800JXXZ曲面4K超高清智能网络"
-									src="__PUBLIC__/statics/uploads/shopimg/20160329/21873023217669.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160329/21873023217669.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147643.htm" tppabs="http://www.123kg.cn/goods/147643" target="_blank"
-								title="Samsung/三星 液晶电视55寸 UA55JU6800JXXZ曲面4K超高清智能网络">Samsung/三星 液晶电视55寸 UA55JU6800JXXZ曲面4K超高清智能网络</a></li>
-							<li class="gray">价值：￥8388.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 93.431092036242%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>7837</em>已参与</span>
-										<span class="gray6 fl"><em>8388</em>总需人次</span>
-										<span class="blue fr"><em>551</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147643.htm" tppabs="http://www.123kg.cn/goods/147643" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147643</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								551</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147471.html" tppabs="http://www.123kg.cn/goods/147471.html" target="_blank"
-								title="Midea/美的 节能空调 KFR-35GW/WJBA3@ 大1.5匹智能云冷暖变频空调"><img alt="Midea/美的 节能空调 KFR-35GW/WJBA3@ 大1.5匹智能云冷暖变频空调"
-									src="__PUBLIC__/statics/uploads/shopimg/20160510/36532385848091.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160510/36532385848091.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147471.htm" tppabs="http://www.123kg.cn/goods/147471" target="_blank"
-								title="Midea/美的 节能空调 KFR-35GW/WJBA3@ 大1.5匹智能云冷暖变频空调">Midea/美的 节能空调 KFR-35GW/WJBA3@ 大1.5匹智能云冷暖变频空调</a></li>
-							<li class="gray">价值：￥3478.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 65.296147211041%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>2271</em>已参与</span>
-										<span class="gray6 fl"><em>3478</em>总需人次</span>
-										<span class="blue fr"><em>1207</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147471.htm" tppabs="http://www.123kg.cn/goods/147471" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147471</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								1207</div>
-						</ul>
-					</div>
-				</div>
-							</div>
-			 			<div class="g-title">
-				<h3 class="fl">品质生活</h3>
-				<div class="m-other fr">
-					<a href="goods_list/96_0_0.html" tppabs="http://www.123kg.cn/goods_list/96_0_0.html" target="_blank" title="更多" class="u-more">更多</a>
-				</div>
-			</div>
-			<div class="k-wares">
-				<div class="k-img">
-					<a href="javascript:;" style="cursor: default;"><img style="cursor: pointer;"
-						src="__PUBLIC__/statics/uploads/cateimg/20160425/11329870575643.jpg" tppabs="http://www.123kg.cn/statics/uploads/cateimg/20160425/11329870575643.jpg"   alt="" 
-						onclick="javascript:window.location.href='goods_list/96_0_0.html'/*tpa=http://www.123kg.cn/goods_list/96_0_0.html*/"></a>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147259.html" tppabs="http://www.123kg.cn/goods/147259.html" target="_blank"
-								title="Ninebot九号平衡车 智能双轮 体感代步车 两轮平衡车"><img alt="Ninebot九号平衡车 智能双轮 体感代步车 两轮平衡车"
-									src="__PUBLIC__/statics/uploads/shopimg/20160225/32646977367680.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160225/32646977367680.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147259.htm" tppabs="http://www.123kg.cn/goods/147259" target="_blank"
-								title="Ninebot九号平衡车 智能双轮 体感代步车 两轮平衡车">Ninebot九号平衡车 智能双轮 体感代步车 两轮平衡车</a></li>
-							<li class="gray">价值：￥2399.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 88.870362651105%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>2132</em>已参与</span>
-										<span class="gray6 fl"><em>2399</em>总需人次</span>
-										<span class="blue fr"><em>267</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147259.htm" tppabs="http://www.123kg.cn/goods/147259" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147259</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								267</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147877.html" tppabs="http://www.123kg.cn/goods/147877.html" target="_blank"
-								title="Casio/卡西欧 登山手表PRW-5100 户外多功能男士手表防水电波石英表"><img alt="Casio/卡西欧 登山手表PRW-5100 户外多功能男士手表防水电波石英表"
-									src="__PUBLIC__/statics/uploads/shopimg/20160317/15030959180381.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160317/15030959180381.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147877.htm" tppabs="http://www.123kg.cn/goods/147877" target="_blank"
-								title="Casio/卡西欧 登山手表PRW-5100 户外多功能男士手表防水电波石英表">Casio/卡西欧 登山手表PRW-5100 户外多功能男士手表防水电波石英表</a></li>
-							<li class="gray">价值：￥5074.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 6.8190776507686%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>346</em>已参与</span>
-										<span class="gray6 fl"><em>5074</em>总需人次</span>
-										<span class="blue fr"><em>4728</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147877.htm" tppabs="http://www.123kg.cn/goods/147877" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147877</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								4728</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147837.html" tppabs="http://www.123kg.cn/goods/147837.html" target="_blank"
-								title="周生生 完美桂冠戒指 18K白色黄金 V&amp;A系列 钻石皇冠戒指 女87042R"><img alt="周生生 完美桂冠戒指 18K白色黄金 V&amp;A系列 钻石皇冠戒指 女87042R"
-									src="__PUBLIC__/statics/uploads/shopimg/20151103/45215635538752.png" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20151103/45215635538752.png"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147837.htm" tppabs="http://www.123kg.cn/goods/147837" target="_blank"
-								title="周生生 完美桂冠戒指 18K白色黄金 V&amp;A系列 钻石皇冠戒指 女87042R">周生生 完美桂冠戒指 18K白色黄金 V&amp;A系列 钻石皇冠戒指 女87042R</a></li>
-							<li class="gray">价值：￥3706.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 1.6729627630869%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>62</em>已参与</span>
-										<span class="gray6 fl"><em>3706</em>总需人次</span>
-										<span class="blue fr"><em>3644</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147837.htm" tppabs="http://www.123kg.cn/goods/147837" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147837</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								3644</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147721.html" tppabs="http://www.123kg.cn/goods/147721.html" target="_blank"
-								title="浪琴 Longines 名匠系列机械男表 L2.628.4.78.5"><img alt="浪琴 Longines 名匠系列机械男表 L2.628.4.78.5"
-									src="__PUBLIC__/statics/uploads/shopimg/20151215/96979389145297.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20151215/96979389145297.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147721.htm" tppabs="http://www.123kg.cn/goods/147721" target="_blank"
-								title="浪琴 Longines 名匠系列机械男表 L2.628.4.78.5">浪琴 Longines 名匠系列机械男表 L2.628.4.78.5</a></li>
-							<li class="gray">价值：￥11950.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 80.468619246862%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>9616</em>已参与</span>
-										<span class="gray6 fl"><em>11950</em>总需人次</span>
-										<span class="blue fr"><em>2334</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147721.htm" tppabs="http://www.123kg.cn/goods/147721" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147721</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								2334</div>
-						</ul>
-					</div>
-				</div>
-							</div>
-			 			<div class="g-title">
-				<h3 class="fl">食品干货</h3>
-				<div class="m-other fr">
-					<a href="goods_list/168_0_0.html" tppabs="http://www.123kg.cn/goods_list/168_0_0.html" target="_blank" title="更多" class="u-more">更多</a>
-				</div>
-			</div>
-			<div class="k-wares">
-				<div class="k-img">
-					<a href="javascript:;" style="cursor: default;"><img style="cursor: pointer;"
-						src="__PUBLIC__/statics/uploads/cateimg/20160425/13233579575669.jpg" tppabs="http://www.123kg.cn/statics/uploads/cateimg/20160425/13233579575669.jpg"   alt="" 
-						onclick="javascript:window.location.href='goods_list/168_0_0.html'/*tpa=http://www.123kg.cn/goods_list/168_0_0.html*/"></a>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147836.html" tppabs="http://www.123kg.cn/goods/147836.html" target="_blank"
-								title="江西 奥玉 泰香米5kg 香,软,嫩,滑,堪称米中精品!"><img alt="江西 奥玉 泰香米5kg 香,软,嫩,滑,堪称米中精品!"
-									src="__PUBLIC__/statics/uploads/shopimg/20151113/85622820380101.png" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20151113/85622820380101.png"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147836.htm" tppabs="http://www.123kg.cn/goods/147836" target="_blank"
-								title="江西 奥玉 泰香米5kg 香,软,嫩,滑,堪称米中精品!">江西 奥玉 泰香米5kg 香,软,嫩,滑,堪称米中精品!</a></li>
-							<li class="gray">价值：￥69.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 71.014492753623%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>49</em>已参与</span>
-										<span class="gray6 fl"><em>69</em>总需人次</span>
-										<span class="blue fr"><em>20</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147836.htm" tppabs="http://www.123kg.cn/goods/147836" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147836</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								20</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147823.html" tppabs="http://www.123kg.cn/goods/147823.html" target="_blank"
-								title="日清方便面 合味道 速食杯面泡面 开杯乐 12杯混装"><img alt="日清方便面 合味道 速食杯面泡面 开杯乐 12杯混装"
-									src="__PUBLIC__/statics/uploads/shopimg/20151104/42797848631550.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20151104/42797848631550.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147823.htm" tppabs="http://www.123kg.cn/goods/147823" target="_blank"
-								title="日清方便面 合味道 速食杯面泡面 开杯乐 12杯混装">日清方便面 合味道 速食杯面泡面 开杯乐 12杯混装</a></li>
-							<li class="gray">价值：￥73.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 76.712328767123%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>56</em>已参与</span>
-										<span class="gray6 fl"><em>73</em>总需人次</span>
-										<span class="blue fr"><em>17</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147823.htm" tppabs="http://www.123kg.cn/goods/147823" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147823</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								17</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147860.html" tppabs="http://www.123kg.cn/goods/147860.html" target="_blank"
-								title="铁观音 安溪铁观音 茶叶 乌龙茶 中闽弘泰铁观音 礼盒装250g秋茶"><img alt="铁观音 安溪铁观音 茶叶 乌龙茶 中闽弘泰铁观音 礼盒装250g秋茶"
-									src="__PUBLIC__/statics/uploads/shopimg/20160310/46939280576049.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160310/46939280576049.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147860.htm" tppabs="http://www.123kg.cn/goods/147860" target="_blank"
-								title="铁观音 安溪铁观音 茶叶 乌龙茶 中闽弘泰铁观音 礼盒装250g秋茶">铁观音 安溪铁观音 茶叶 乌龙茶 中闽弘泰铁观音 礼盒装250g秋茶</a></li>
-							<li class="gray">价值：￥108.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 9.2592592592593%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>10</em>已参与</span>
-										<span class="gray6 fl"><em>108</em>总需人次</span>
-										<span class="blue fr"><em>98</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147860.htm" tppabs="http://www.123kg.cn/goods/147860" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147860</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								98</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147853.html" tppabs="http://www.123kg.cn/goods/147853.html" target="_blank"
-								title="裕昌 哈尔滨红肠 瘦肉儿童肠90g*10支 正宗 东北特产"><img alt="裕昌 哈尔滨红肠 瘦肉儿童肠90g*10支 正宗 东北特产"
-									src="__PUBLIC__/statics/uploads/shopimg/20160315/67308291008525.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160315/67308291008525.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147853.htm" tppabs="http://www.123kg.cn/goods/147853" target="_blank"
-								title="裕昌 哈尔滨红肠 瘦肉儿童肠90g*10支 正宗 东北特产">裕昌 哈尔滨红肠 瘦肉儿童肠90g*10支 正宗 东北特产</a></li>
-							<li class="gray">价值：￥76.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 89.473684210526%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>68</em>已参与</span>
-										<span class="gray6 fl"><em>76</em>总需人次</span>
-										<span class="blue fr"><em>8</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147853.htm" tppabs="http://www.123kg.cn/goods/147853" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147853</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								8</div>
-						</ul>
-					</div>
-				</div>
-							</div>
-			 			<div class="g-title">
-				<h3 class="fl">礼品玩具</h3>
-				<div class="m-other fr">
-					<a href="goods_list/76_0_0.html" tppabs="http://www.123kg.cn/goods_list/76_0_0.html" target="_blank" title="更多" class="u-more">更多</a>
-				</div>
-			</div>
-			<div class="k-wares">
-				<div class="k-img">
-					<a href="javascript:;" style="cursor: default;"><img style="cursor: pointer;"
-						src="__PUBLIC__/statics/uploads/cateimg/20160425/93171914575598.jpg" tppabs="http://www.123kg.cn/statics/uploads/cateimg/20160425/93171914575598.jpg"   alt="" 
-						onclick="javascript:window.location.href='goods_list/76_0_0.html'/*tpa=http://www.123kg.cn/goods_list/76_0_0.html*/"></a>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147848.html" tppabs="http://www.123kg.cn/goods/147848.html" target="_blank"
-								title="宝马儿童电动车 四轮童车可坐 宝宝玩具车 双驱可遥控小孩电动汽车 白色 双电双驱+缓启动+2.4G遥控"><img alt="宝马儿童电动车 四轮童车可坐 宝宝玩具车 双驱可遥控小孩电动汽车 白色 双电双驱+缓启动+2.4G遥控"
-									src="__PUBLIC__/statics/uploads/shopimg/20150825/26242765489092.png" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20150825/26242765489092.png"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147848.htm" tppabs="http://www.123kg.cn/goods/147848" target="_blank"
-								title="宝马儿童电动车 四轮童车可坐 宝宝玩具车 双驱可遥控小孩电动汽车 白色 双电双驱+缓启动+2.4G遥控">宝马儿童电动车 四轮童车可坐 宝宝玩具车 双驱可遥控小孩电动汽车 白色 双电双驱+缓启动+2.4G遥控</a></li>
-							<li class="gray">价值：￥598.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 18.729096989967%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>112</em>已参与</span>
-										<span class="gray6 fl"><em>598</em>总需人次</span>
-										<span class="blue fr"><em>486</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147848.htm" tppabs="http://www.123kg.cn/goods/147848" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147848</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								486</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147755.html" tppabs="http://www.123kg.cn/goods/147755.html" target="_blank"
-								title="荟智 儿童三轮玩具电动汽车 可坐小孩宝宝童车 HW666-J172 白色"><img alt="荟智 儿童三轮玩具电动汽车 可坐小孩宝宝童车 HW666-J172 白色"
-									src="__PUBLIC__/statics/uploads/shopimg/20160405/39952673822371.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160405/39952673822371.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147755.htm" tppabs="http://www.123kg.cn/goods/147755" target="_blank"
-								title="荟智 儿童三轮玩具电动汽车 可坐小孩宝宝童车 HW666-J172 白色">荟智 儿童三轮玩具电动汽车 可坐小孩宝宝童车 HW666-J172 白色</a></li>
-							<li class="gray">价值：￥731.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 33.242134062927%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>243</em>已参与</span>
-										<span class="gray6 fl"><em>731</em>总需人次</span>
-										<span class="blue fr"><em>488</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147755.htm" tppabs="http://www.123kg.cn/goods/147755" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147755</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								488</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147670.html" tppabs="http://www.123kg.cn/goods/147670.html" target="_blank"
-								title="奔驰SLR儿童电动车 宝宝四轮玩具车 流线跑车设计 颜色随机发"><img alt="奔驰SLR儿童电动车 宝宝四轮玩具车 流线跑车设计 颜色随机发"
-									src="__PUBLIC__/statics/uploads/shopimg/20151224/11085362923392.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20151224/11085362923392.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147670.htm" tppabs="http://www.123kg.cn/goods/147670" target="_blank"
-								title="奔驰SLR儿童电动车 宝宝四轮玩具车 流线跑车设计 颜色随机发">奔驰SLR儿童电动车 宝宝四轮玩具车 流线跑车设计 颜色随机发</a></li>
-							<li class="gray">价值：￥1546.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 51.487710219922%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>796</em>已参与</span>
-										<span class="gray6 fl"><em>1546</em>总需人次</span>
-										<span class="blue fr"><em>750</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147670.htm" tppabs="http://www.123kg.cn/goods/147670" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147670</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								750</div>
-						</ul>
-					</div>
-				</div>
-								<div class="h-wares-list">
-					<div class="h-wares-con">
-						<ul>
-							<li class="h-hot-pic cart-pic"><a
-								href="goods/147854.html" tppabs="http://www.123kg.cn/goods/147854.html" target="_blank"
-								title="ZIPPO打火机 高山鹰拉丝纯铜徽章20854 男士 美国原装"><img alt="ZIPPO打火机 高山鹰拉丝纯铜徽章20854 男士 美国原装"
-									src="__PUBLIC__/statics/uploads/shopimg/20160407/51343920996320.jpg" tppabs="http://www.123kg.cn/statics/uploads/shopimg/20160407/51343920996320.jpg"></a></li>
-														<li class="h-hot-name"><a
-								href="goods/147854.htm" tppabs="http://www.123kg.cn/goods/147854" target="_blank"
-								title="ZIPPO打火机 高山鹰拉丝纯铜徽章20854 男士 美国原装">ZIPPO打火机 高山鹰拉丝纯铜徽章20854 男士 美国原装</a></li>
-							<li class="gray">价值：￥645.00</li>
-							<li class="h-progress">
-								<dl class="m-progress">
-									<dt>
-										<b
-											style="width: 5.2713178294574%"></b>
-									</dt>
-									<dd>
-										<span class="orange fl"><em>34</em>已参与</span>
-										<span class="gray6 fl"><em>645</em>总需人次</span>
-										<span class="blue fr"><em>611</em>剩余</span>
-									</dd>
-								</dl>
-							</li>
-							<li><a href="goods/147854.htm" tppabs="http://www.123kg.cn/goods/147854" class="u-imm"
-								target="_blank" title="只要1元，即可购买">立即快购</a>
-								<a href="javascript:;" title="加入到购物车" class="Det_Cart u-cart">
-									<s> </s>
-							</a></li>
-							<div class="Curbor_id" style="display: none;">
-								147854</div>
-							<div class="Curbor_yunjiage" style="display: none;">
-								1.00</div>
-							<div class="Curbor_shenyu" style="display: none;">
-								611</div>
-						</ul>
-					</div>
-				</div>
-							</div>
+			
 						<div style="clear: both;"></div>
 		</div>
 	</div>
 	<!--即将揭晓-->
 	<div class="g-title m-sort">
 		<h3 class="fl">即将揭晓</h3>
-		<div class="fr">
-			  <a
-				href="goods_list/200.html" tppabs="http://www.123kg.cn/goods_list/200.html"
-				target="_blank">汽车专区</a>  <a
-				href="goods_list/185.html" tppabs="http://www.123kg.cn/goods_list/185.html"
-				target="_blank">苹果专区</a>  <a
-				href="goods_list/5.html" tppabs="http://www.123kg.cn/goods_list/5.html"
-				target="_blank">手机数码</a>  <a
-				href="goods_list/75.html" tppabs="http://www.123kg.cn/goods_list/75.html"
-				target="_blank">代金券类</a>  <a
-				href="goods_list/6.html" tppabs="http://www.123kg.cn/goods_list/6.html"
-				target="_blank">精品电器</a>  <a
-				href="goods_list/96.html" tppabs="http://www.123kg.cn/goods_list/96.html"
-				target="_blank">品质生活</a>  <a
-				href="goods_list/182.html" tppabs="http://www.123kg.cn/goods_list/182.html"
-				target="_blank">中国黄金</a>  <a
-				href="goods_list/168.html" tppabs="http://www.123kg.cn/goods_list/168.html"
-				target="_blank">食品干货</a>  <a
-				href="goods_list/76.html" tppabs="http://www.123kg.cn/goods_list/76.html"
-				target="_blank">礼品玩具</a> 					</div>
+		
 	</div>
 	<div class="announced-soon clear" id="divSoonGoodsList">
 				<div class="soon-list-con">
