@@ -61,10 +61,39 @@ class User extends CI_Controller {
     }
     //商品列表
     public function user_list(){
-        $query['arr']=$this->db->query("select * from wi_goods inner JOIN wi_type on  wi_goods.type_id=wi_type.type_id INNER JOIN wi_price on wi_goods.price_id=wi_price.price_id order by goods_id desc;")->result_array();
+        //@$type_id=trim($_GET['type_id']);
+        //$type_id=isset($type_id)?$type_id:'';
+        //print_r($type_id) ;die;
+        $type_id=isset($_GET['type_id'])?$_GET['type_id']:'';
+        $goods_name=isset($_GET['goods_name'])?$_GET['goods_name']:'';
+        $page=isset($_GET['page'])?$_GET['page']:1;
+        $counts=$this->db->join('type','goods.type_id=type.type_id')->join('price','goods.price_id=price.price_id')->like('type.type_id',$type_id)->like('goods.goods_name',$goods_name)->count_all_results('goods');
+        $length='3';
+        $pages=ceil($counts/$length);
+        //echo $pages;
+        $prev=$page<=1?1:$page-1;
+        $next=$page>=$pages?$pages:$page+1;
+        //print_r($prev);
+        $offset=($page-1)*$length;
+        $str='';
+        $str.="<a href='javascript:void(0);' onclick='page(1)'>首页</a>　";
+        $str.="<a href='javascript:void(0);' onclick='page({$prev})'>上一页</a>　";
+        $str.="<a href='javascript:void(0);' onclick='page({$next})'>下一页</a>　　";
+        $str.="<a href='javascript:void(0);' onclick='page({$pages})'>末页</a>";
+        $query['arr']=$this->db->join('type','goods.type_id=type.type_id')->join('price','goods.price_id=price.price_id')->like('type.type_id',$type_id)->like('goods.goods_name',$goods_name)->limit($length,$offset)->get('goods')->result_array();
+        // $sql=$this->db->last_query();
+        // print_r($sql);die;
+        $query['str']=$str;
+        $query['goods_name']=$goods_name;
+        $query['type_id']=$type_id;
+        $query['type']=$this->db->query("select * from wi_type")->result_array();
+        //print_r($query);
+        //$query['arr']=$this->db->query("select * from wi_goods inner JOIN wi_type on  wi_goods.type_id=wi_type.type_id INNER JOIN wi_price on wi_goods.price_id=wi_price.price_id order by goods_id desc;")->result_array();
         //$query['arr']=$this->db->query("select * from wi_type")->result_array();
         //print_r($query);die;
         $this->load->view('user/cat_manage.html',$query);
+        
+        
     }
 
 	//处理接受表单的值
@@ -81,5 +110,16 @@ class User extends CI_Controller {
 			echo "<script>alert('用户名不存在，请重新输入'),location.href='".site_url('wanji/index')."'</script>";
 		}
 	}
-	
+	//删除
+    public function user_delete(){
+        $goods_id=$this->uri->segment(3);
+        //echo $goods_id;
+        $data=$this->db->delete('goods', array('goods_id' => $goods_id)); 
+        //var_dump($data);die;
+        if($data){
+            $this->user_list();
+        }else{
+            $this->user_list();
+        }
+    }
 }
