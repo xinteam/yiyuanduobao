@@ -29,7 +29,7 @@ s.parentNode.insertBefore(hm, s);
 		<span class="logo_pic"><a href="../../index.htm" tppabs="http://www.123kg.cn/" class="a" title="一元夺宝,一元夺宝平台!一元秒杀抢购-123快购电子商务">
 			<img src="__PUBLIC__/statics/uploads/banner/20150818/57061362890427.jpg" tppabs="http://www.123kg.cn/statics/uploads/banner/20150818/57061362890427.jpg"/>
 		</a></span>
-		<span class="tel"><a href="../../index.htm" tppabs="http://www.123kg.cn/" style="color:#999;">返回首页</a></span>
+		<span class="tel"><a href="__URL__/index" tppabs="http://www.123kg.cn/" style="color:#999;">返回首页</a></span>
 	</div>
 </div>
 <div class="shop_process">
@@ -152,13 +152,18 @@ $(function(){
 		if(countmoney > 0){		
 			//$.cookie('Cartlist','',{path:'/'});
 			$.cookie('Cartlist',$.toJSON(info),{expires:30,path:'/'});
-			document.location.href='pay/-channel=.htm'/*tpa=http://www.123kg.cn/member/cart/pay/?channel=*/;
+			if($_SESSION['user_name']){
+				document.location.href='__URL__/tijiao';
+			}else{
+				document.location.href='__URL__/login';
+			}
+			
 		}else{
 			alert("购物车为空!");
 		}
 	});
 });
-function UpdataMoney(shopid,number,zindex){		
+function UpdataMoney(shopid,number,zindex){
 		var number = parseInt(number);
 		info['MoenyCount']=info['MoenyCount']-info[shopid]['money']*info[shopid]['num']+info[shopid]['money']*number;
 		info[shopid]['num']=number;
