@@ -90,6 +90,7 @@ class IndexController extends Controller {
 		//最热商品展示
 		$goods = D('wi_goods');
 		$goods_hot = $goods->order('goods_people desc')->limit(5)->select();
+        $goods_hot=$this->baifenbi($goods_hot);
 		$this->assign('goods_hot',$goods_hot);
 		//最新揭晓
 		$type = D('wi_type');
@@ -97,19 +98,42 @@ class IndexController extends Controller {
 		$this->assign('g_type',$g_type);
 		//最新商品展示
 		$goods_new = $goods->order('goods_id desc')->limit(5)->select();
+        $goods_new=$this->baifenbi($goods_new);
 		$this->assign('goods_new',$goods_new);
 		//苹果专区
 		$goods_apple = $goods->where('type_id=5')->order('goods_id desc')->limit(4)->select();
+        $goods_apple=$this->baifenbi($goods_apple);
 		$this->assign('goods_apple',$goods_apple);
+
 		//手机数码专区
 		$goods_tel = $goods->where('type_id=6')->order('goods_id desc')->limit(4)->select();
+        $goods_tel=$this->baifenbi($goods_tel);
 		$this->assign('goods_tel',$goods_tel);
+
 		//代金卷类
 		$goods_dai = $goods->where('type_id=4')->order('goods_id desc')->limit(4)->select();
+        $goods_dai=$this->baifenbi($goods_dai);
 		$this->assign('goods_dai',$goods_dai);
 
-		$this->display('Index/index');
+        //晒单
+        $show = M('wi_show');
+        $arr= $show->join('wi_user ON wi_show.user_id = wi_user.user_id')->where("show_status='1'")->select();
+        //print_r($arr);die;
+        $this->assign('show',$arr);
+
+        $this->display('Index/index');
 	}
+
+
+    public function baifenbi($data){
+        for($i=0;$i<count($data);$i++){
+            $data[$i]['baifenbi']=($data[$i]['readly_people']/$data[$i]['goods_people'])*100;
+        }
+        for($i=0;$i<count($data);$i++){
+            $data[$i]['sheng']=($data[$i]['goods_people']-$data[$i]['readly_people']);
+        }
+        return $data;
+    }
 	
 	//首页分类搜索功能
 	public function goods_search(){
