@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="<?php  echo base_url('Style/skin.css')?>" />
 </head>
 <body>
+<div id='list' >
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
     <!-- 头部开始 -->
     <tr>
@@ -34,14 +35,20 @@
                                 <td width="100" align="center"><img src="<?php  echo base_url('Images/mime.gif')?>" /></td>
                                 <td valign="bottom"><h3 style="letter-spacing:1px;">在这里，您可以查看商品数据！</h3></td>
                                 <td valign="bottom">
-                                    <select style="height:25px " class="cg_class">
-                                        <option value="0">请选择品牌或类型</option>
-                                        <?php foreach($classify as $v){ if($v['leval']=='2'){?>
-                                        <option value="<?php echo $v['c_id']?>"><?php echo $v['c_name']?></option>
-                                        <?php }}?>
+                                    <select style="height:25px " class="cg_class" id='type_id'>
+                                        <option value="0">--请选择商品类型--</option>
+                                        <?php foreach($type as $v){?>
+                                        <option value="<?php echo $v['type_id'];?>"
+                                        <?php if($v['type_id']==$type_id){
+                                            echo 'selected=selected';
+                                        }?>
+                                        >
+                                        <?php echo $v['type_name'];?>
+                                        </option>
+                                        <?php }?>
                                     </select>
-                                    <input class="cg_name" type="text" style="height: 23px" placeholder="请输入商品名称！"/>
-                                    <input type="button"   class="check_name" value="搜索"/>
+                                    <input class="cg_name" type="text" id="goods_name" style="height: 23px" placeholder="请输入商品名称！" value="<?php echo $goods_name ;?>" />
+                                    <input type="button" onclick="page(1)"  class="check_name" value="搜索"/>
                                 </td>
                             </tr>
                         </table>
@@ -91,14 +98,15 @@
                                                     }?></td>
                                                     <td><?php echo $v['price_name']?></td>
                                                     <td><?php echo $v['goods_people']?>人</td>
-                                                    <td>删除|修改</td>
+                                                    <td><a href="<?php echo site_url('user/user_delete/'.$v['goods_id']);?>">删除</a>|修改</td>
                                                 </tr>
                                             <?php } ?>
                                         </table>
+                                        <center><?php echo $str;?></center>
                                     </form>
                                    <span class="a_page" style="float: right">
                                        <!--
-                                       <?php echo $page ?>
+                                     
                                        -->
                                    </span>
                                 </td>
@@ -128,15 +136,17 @@
         </td>
         <td background="<?php  echo base_url('Images/mail_right_bg.gif')?>">&nbsp;</td>
     </tr>
+    </div>
     <!-- jquery -->
-    <script src="<?php echo base_url('public/jquery-2.1.4.min.js')?>"></script>
+    <script src="<?php echo base_url('Js/jquery.js')?>"></script>
+    
     <script>
-        $(document).ready(function(){
-            cg_name=''
-            cg_class=0
-            cg_type=''
-            jqpage(1)
-        });
+        // $(document).ready(function(){
+        //     cg_name=''
+        //     cg_class=0
+        //     cg_type=''
+        //     jqpage(1)
+        // });
 
         //jQuery 搜索
         $(".check_name").click(function(){
@@ -210,3 +220,20 @@
 </table>
 </body>
 </html>
+<script>
+    function page(page){
+        type_id=$('#type_id').val();
+        //alert(type_id)
+        goods_name=$('#goods_name').val();
+        if(type_id==0){
+            type_id='';
+        }
+        //alert(type_id)
+        data={'page':page,'type_id':type_id,'goods_name':goods_name};
+        url="<?php echo site_url('user/user_list');?>";
+        $.get(url,data,function(msg){
+            //alert(msg)
+            $('#list').html(msg);
+        });
+    }
+</script>

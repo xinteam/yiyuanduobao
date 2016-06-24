@@ -17,7 +17,7 @@
 <?php foreach($news as $v) : ?>
 <tr>
 	<td><?php echo $v['car_id']?></td>
-	<td><img src="<?php echo base_url($v['car_name'])?>" width="50" height="50"/></td>
+	<td><img src="<?php echo "../".$v['car_name'] ?>" width="50" height="50"/></td>
 	<td onclick="photo_s(<?php echo $v['car_id']?>)"><?php if($v['car_status']==1){ echo "√"; }else{ echo "×";} ?></td>
 	<td><a href="photo_del?id=<?php echo $v['car_id']?>">删除</a></td>
 </tr>

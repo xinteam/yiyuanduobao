@@ -475,11 +475,11 @@ $.fn.CloudZoom.defaults = {
 			<p class="Det_money">价值：<span class="rmbgray">{$f_info.goods_}</span></p>
 			<!--显示揭晓动画 start-->
 							<div class="Progress-bar">
-				<p title="已完成66.96%"><span style="width:301.34131736527px; display:;"></span></p>
+				<p title="已完成66.96%"><span style="width:{$g_info.jin}px; display:;"></span></p>
 				<ul class="Pro-bar-li">
-					<li class="P-bar01"><em>25162</em>已参与人次</li>
-					<li class="P-bar02"><em id="CodeQuantity">37575</em>总需人次</li>
-					<li class="P-bar03"><em id="CodeLift">12413</em>剩余人次</li>
+					<li class="P-bar01"><em>{$g_info.readly_people}</em>已参与人次</li>
+					<li class="P-bar02"><em id="CodeQuantity">{$g_info.goods_people}</em>总需人次</li>
+					<li class="P-bar03"><em id="CodeLift">{$sheng}</em>剩余人次</li>
 				</ul>
 			</div>
 		
@@ -494,7 +494,7 @@ $.fn.CloudZoom.defaults = {
 				<a href="javascript:;" class="num_del num_ban" id="shopsub">-</a>
 				<input style="border:1px solid #CFCFCF" type="text" value="1" maxlength="7" onKeyUp="value=value.replace(/\D/g,'')" class="num_dig" id="num_dig"/>
 				<a href="javascript:;" class="num_add" id="shopadd">+</a>人次 
-				<span id="chance" class="gray03">购买人次越多获得几率越大哦！</span>
+				<!--<span id="chance" class="gray03">购买人次越多获得几率越大哦！</span>-->
 			</div>
 			<div style="display:none;" id="hqid">134117</div>
 			<div id="divBuy" class="Det_button">
@@ -704,28 +704,30 @@ $(function(){
 			var showbaifen=numshop/37575;
 			var baifenbi=baifenshua(showbaifen,2);
 		}
-		$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+		//$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
 	});
 	$("#shopadd").click(function(){
 		var shopnum = $("#num_dig");
+        var shennum=$("#CodeLift").text()
 			var resshopnump='';
-			var ten_per = Math.floor(parseInt(37575)) || 1;
-			var max_num = (ten_per > parseInt(shopinfo['shenyu'])) ? parseInt(shopinfo['shenyu']) : ten_per;
+//			var ten_per = Math.floor(parseInt(37575)) || 1;
+			var ten_per = $("#CodeQuantity").text()
+//			var max_num = (ten_per > parseInt(shopinfo['shenyu'])) ? parseInt(shopinfo['shenyu']) : ten_per;
 			var num = parseInt(shopnum.val());
-			if(num >= max_num){
-				shopnum.val(max_num);
+			if(num >= shennum){
+				shopnum.val(shennum);
 				resshopnump = max_num;
 			}else{
 				resshopnump=parseInt(shopnum.val())+1;
 				shopnum.val(resshopnump);
 			}
-			if(resshopnump==37575){
-				var baifenbi='100%';
-			}else{
-				var showbaifen=resshopnump/37575;
-				var baifenbi=baifenshua(showbaifen,2);
-			}
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+//			if(resshopnump==37575){
+//				var baifenbi='100%';
+//			}else{
+//				var showbaifen=resshopnump/37575;
+//				var baifenbi=baifenshua(showbaifen,2);
+//			}
+//			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
 	});
 	
 	
@@ -737,14 +739,14 @@ $(function(){
 		}else{
 			shopnum.val(parseInt(shopnum.val())-1);
 		}
-		var shopnums=parseInt(shopnum.val());
-		if(shopnums==37575){
-				var baifenbi='100%';
-			}else{
-				var showbaifen=shopnums/37575;
-				var baifenbi=baifenshua(showbaifen,2);
-			}
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+//		var shopnums=parseInt(shopnum.val());
+//		if(shopnums==37575){
+//				var baifenbi='100%';
+//			}else{
+//				var showbaifen=shopnums/37575;
+//				var baifenbi=baifenshua(showbaifen,2);
+//			}
+//			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
 	});
 });
 
