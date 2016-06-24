@@ -33,7 +33,7 @@ class IndexController extends Controller {
 		}else{
 			$data['user_name'] = I('post.user_name');
 			$data['user_pwd'] = I('post.userpassword');
-			$user = D('wi_user');
+			$user = D('wi_us    er');
 			$re = $user->add($data);
 			if($re){
 				$this->success('注册成功',U('Index/login'),3);
