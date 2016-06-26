@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>å¥”é©°Â é•¿è½´è·Cçº§è¿åŠ¨è½¿è½¦Â 180Â L (25å¹´ä½¿ç”¨æƒÂ å•†å“ä»·æ ¼åŒ…æ‹¬è´­ç½®ç¨ŽÂ ä¸Šç‰Œè´¹Â è½¦èˆ¹ä½¿ç”¨ç¨ŽÂ äº¤å¼ºé™©Â ä¸åŒ…æ‹¬å…¶ä»–è´¹ç”¨åŠè¿è¾“è´¹)</title>
+<title>{$gg_type[0][type_name]}</title>
 <link href="./favicon.ico" type="image/x-icon" rel="shortcut icon">
 <link href="./favicon.ico" type="image/x-icon" rel="icon">
 <meta name="keywords" content="å¥”é©°æ±½è½¦,Cçº§è¿åŠ¨è½¿è½¦" />
@@ -419,8 +419,7 @@ $(function(){
                     	<!--è¡¥ä¸3.1.5_b.0.1-->                    	 
                     	        
                         <!--è¡¥ä¸3.1.5_b.0.1-->        
-																			
-						                        						
+
 												                        <i class="goods_xp"></i>                     	
 						<img alt="{$v.goods_name}" src="__PUBLIC__/{$v.goods_img}">
 					</a>
@@ -429,18 +428,21 @@ $(function(){
 				<p class="name">
 					<a href="__URL__/goods_info?goods_id={$v.goods_id}" target="_blank">{$v.goods_name}</a>
 				</p>
-				<p class="money">ä»·å€¼ï¼š<span class="rmbgray">{$v.goods_price}</span></p>
+				<p class="money">ä»·å€¼ï¼š<span class="rmbgray">ï¿¥{$v.goods_price}</span></p>
 				<div class="Progress-bar">
-					<p title="å·²å®Œæˆ71.02%"><span style="width:151.28031496063px;"></span></p>
-					<ul class="Pro-bar-li">
-						<li class="P-bar01"><em>451</em>å·²å‚ä¸Žäººæ¬¡</li>
-						<li class="P-bar02"><em>635</em>æ€»éœ€äººæ¬¡</li>
-						<li class="P-bar03"><em>184</em>å‰©ä½™äººæ¬¡</li>
+                    <?php
+                        $a={$v.baifenbi}*210;
+                    ?>
+					<p title="å·²å®Œæˆ{$v.baifenbi}%"><span style="width:<?php echo $a; ?> px;"></span></p>
+					<ul class="Pro-bar-li">+
+						<li class="P-bar01"><em>{$v.readly_people}</em>å·²å‚ä¸Žäººæ¬¡</li>
+						<li class="P-bar02"><em>{$v.goods_people}</em>æ€»éœ€äººæ¬¡</li>
+						<li class="P-bar03"><em>{$v.sheng}</em>å‰©ä½™äººæ¬¡</li>
 					</ul>
 				</div>
 				<div class="gl_buybtn">
 					<div class="go_buy">
-						<a href="javascript:;" title="ç«‹å³è´­ä¹°" class="go_Shopping fl">ç«‹å³å¿«è´­</a>
+						<a href="__APP__/Home/Info/goods_info?goods_id={$v.goods_id}" title="ç«‹å³è´­ä¹°" class="go_Shopping fl">ç«‹å³å¿«è´­</a>
 						<a href="javascript:;" title="åŠ å…¥è´­ç‰©è½¦" class="go_cart fr">åŠ å…¥è´­ç‰©è½¦</a>
 					</div>
 				</div>
@@ -601,13 +603,13 @@ function Cartcookie(sw,cook){
 						<dl>
 				<dt>æƒå¨å‹é“¾</dt>
 												<dd>
-					<a href="javascript:if(confirm('http://www.nbcyl.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.nbcyl.com/'" tppabs="http://www.nbcyl.com/" target="_blank">å—åŒ—å·¢å…»è€ç½‘</a>
+					<a href="javascript:if(confirm('http://www.nbcyl.com/  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½?'))window.location='http://www.nbcyl.com/'" tppabs="http://www.nbcyl.com/" target="_blank">å—åŒ—å·¢å…»è€ç½‘</a>
 				</dd>
 												<dd>
-					<a href="javascript:if(confirm('http://www.123pww.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.123pww.com/'" tppabs="http://www.123pww.com/" target="_blank">æ±½è½¦ç¥¨ç½‘ä¸Šè®¢ç¥¨</a>
+					<a href="javascript:if(confirm('http://www.123pww.com/  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½?'))window.location='http://www.123pww.com/'" tppabs="http://www.123pww.com/" target="_blank">æ±½è½¦ç¥¨ç½‘ä¸Šè®¢ç¥¨</a>
 				</dd>
 							<dd>
-					<a href="javascript:if(confirm('http://care.fh21.com.cn/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://care.fh21.com.cn/'" tppabs="http://care.fh21.com.cn/" target="_blank">å¥åº·ä¿å¥</a>
+					<a href="javascript:if(confirm('http://care.fh21.com.cn/  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½?'))window.location='http://care.fh21.com.cn/'" tppabs="http://care.fh21.com.cn/" target="_blank">å¥åº·ä¿å¥</a>
 				</dd>
 				<dd>
 					<a href="../link.htm" tppabs="http://www.123kg.cn/link" target="_blank">å…¶ä»–å‹é“¾</a>
@@ -672,19 +674,19 @@ function Cartcookie(sw,cook){
 			href="javascript:void" class="footer_icon_a"><img
 			class="desaturate" src="__PUBLIC__/statics/templates/yungoucms/images/zfb.png" tppabs="http://www.123kg.cn/statics/templates/yungoucms/images/zfb.png" /></a> <a
 			target="_blank"
-			href="javascript:if(confirm('http://qwrz.baidu.com/id/d7d9badc2133dd8cc29356558d8955dc  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://qwrz.baidu.com/id/d7d9badc2133dd8cc29356558d8955dc'" tppabs="http://qwrz.baidu.com/id/d7d9badc2133dd8cc29356558d8955dc"
+			href="javascript:if(confirm('http://qwrz.baidu.com/id/d7d9badc2133dd8cc29356558d8955dc  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½?'))window.location='http://qwrz.baidu.com/id/d7d9badc2133dd8cc29356558d8955dc'" tppabs="http://qwrz.baidu.com/id/d7d9badc2133dd8cc29356558d8955dc"
 			class="footer_icon_a"><img class="desaturate"
 			src="__PUBLIC__/statics/templates/yungoucms/images/bd.png" tppabs="http://www.123kg.cn/statics/templates/yungoucms/images/bd.png" /></a>
 
 		<!--<div class="footer_icon_a" style="width: 40px;"><script id="ebsgovicon" src="http://szcert.ebs.org.cn/govicon.js?id=48ba49f0-4c10-4fe1-bcde-c2968fe8375c&width=23&height=31&type=1" type="text/javascript" charset="utf-8"></script></div>-->
 		<div class="footer_icon_a" style="width: 40px;">
 			<a target="_blank"
-				href="javascript:if(confirm('http://szcert.ebs.org.cn/48ba49f0-4c10-4fe1-bcde-c2968fe8375c  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://szcert.ebs.org.cn/48ba49f0-4c10-4fe1-bcde-c2968fe8375c'" tppabs="http://szcert.ebs.org.cn/48ba49f0-4c10-4fe1-bcde-c2968fe8375c"><img
+				href="javascript:if(confirm('http://szcert.ebs.org.cn/48ba49f0-4c10-4fe1-bcde-c2968fe8375c  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½?'))window.location='http://szcert.ebs.org.cn/48ba49f0-4c10-4fe1-bcde-c2968fe8375c'" tppabs="http://szcert.ebs.org.cn/48ba49f0-4c10-4fe1-bcde-c2968fe8375c"><img
 				class="desaturate" border="0"
 				src="__PUBLIC__/statics/templates/yungoucms/images/gswj.png" tppabs="http://www.123kg.cn/statics/templates/yungoucms/images/gswj.png"
 				style="width: 23px; height: 31px;" /></a>
 		</div>
-		<a href="javascript:if(confirm('http://webscan.360.cn/index/checkwebsite/url/www.123kg.cn  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://webscan.360.cn/index/checkwebsite/url/www.123kg.cn'" tppabs="http://webscan.360.cn/index/checkwebsite/url/www.123kg.cn"
+		<a href="javascript:if(confirm('http://webscan.360.cn/index/checkwebsite/url/www.123kg.cn  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½?'))window.location='http://webscan.360.cn/index/checkwebsite/url/www.123kg.cn'" tppabs="http://webscan.360.cn/index/checkwebsite/url/www.123kg.cn"
 			class="footer_icon_a"><img class="desaturate" border="0"
 			src="../../img.webscan.360.cn/status/pai/hash/38f0026577f967c66c8be6c1fce937f0" tppabs="http://img.webscan.360.cn/status/pai/hash/38f0026577f967c66c8be6c1fce937f0"
 			style="width: 90px; height: 30px;" /></a> <a target="_blank"
@@ -723,10 +725,10 @@ function Cartcookie(sw,cook){
 			<a href="javascript::;" class="quick_serviceA " target="_blank"><b>åœ¨çº¿å®¢æœ</b><s></s></a>
 			<div style="display: none;" id="btnQq" class="btn_qq_service">
 
-				<a href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=1357991441&site=qq&menu=yes  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=1357991441&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=1357991441&site=qq&menu=yes" target="_blank">å®¢æœ-å…ƒå…ƒ</a>
-				<a href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes" target="_blank">å®¢æœ-è´è´</a>
-				 <a href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=123579695&site=qq&menu=yes  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=123579695&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=123579695&site=qq&menu=yes" target="_blank">å®¢æœ-é™é™</a>
-				<a href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes" target="_blank">å•†åŠ¡åˆä½œ</a>
+				<a href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=1357991441&site=qq&menu=yes  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=1357991441&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=1357991441&site=qq&menu=yes" target="_blank">å®¢æœ-å…ƒå…ƒ</a>
+				<a href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes" target="_blank">å®¢æœ-è´è´</a>
+				 <a href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=123579695&site=qq&menu=yes  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=123579695&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=123579695&site=qq&menu=yes" target="_blank">å®¢æœ-é™é™</a>
+				<a href="javascript:if(confirm('http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½?'))window.location='http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes'" tppabs="http://wpa.qq.com/msgrd?v=3&uin=3114176893&site=qq&menu=yes" target="_blank">å•†åŠ¡åˆä½œ</a>
 			</div>
 		</dd>
 		<dd class="quick_Collection">

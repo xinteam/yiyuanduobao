@@ -127,7 +127,8 @@ class IndexController extends Controller {
 
     public function baifenbi($data){
         for($i=0;$i<count($data);$i++){
-            $data[$i]['baifenbi']=($data[$i]['readly_people']/$data[$i]['goods_people'])*100;
+
+            $data[$i]['baifenbi']=number_format((($data[$i]['readly_people']/$data[$i]['goods_people'])*100 ), 2, '.', ''); ;
         }
         for($i=0;$i<count($data);$i++){
             $data[$i]['sheng']=($data[$i]['goods_people']-$data[$i]['readly_people']);
@@ -139,7 +140,10 @@ class IndexController extends Controller {
 	public function goods_search(){
 		$id = $_GET['id'];
 		$type = D('wi_goods');
-		$gg_type = $type->where("type_id='$id'")->order('goods_id desc')->select();
+		$gg_type = $type->join('wi_type on wi_goods.type_id=wi_type.type_id')->where("wi_type.type_id='$id'")->order('goods_id desc')->select();
+
+        $gg_type=$this->baifenbi($gg_type);
+//        print_r($gg_type);die;
 		$this->assign('gg_type',$gg_type);
 		$this->display('Index/goods_search');
 	}
@@ -172,13 +176,18 @@ class IndexController extends Controller {
 	public function goods_lottery(){
 		$this->display('Index/goods_lottery/index');
 	}
-	
-	//晒单分享
-	public function shaidan(){
-		$this->display('Index/shaidan/index');
-	}
-	
-	//心愿单
+
+    //晒单分享
+    public function shaidan(){
+        $shai = M('wi_show');
+        $shaidan = $shai->join('wi_user on wi_show.user_id=wi_user.user_id')->where("wi_show.show_status='1'")->order('wi_show.show_time desc')->limit(15)->select();
+        //print_r($shaidan);exit;
+        $this->assign('shaidan',$shaidan);
+        $this->display('Index/shaidan/index');
+    }
+
+
+    //心愿单
 	public function wish(){
 		$this->display('Index/wish/index');
 	}
