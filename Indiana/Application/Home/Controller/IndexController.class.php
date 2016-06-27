@@ -179,12 +179,12 @@ class IndexController extends Controller {
 
     //晒单分享
     public function shaidan(){
-        $shai = M('wi_show');
-        $shaidan = $shai->join('wi_user on wi_show.user_id=wi_user.user_id')->where("wi_show.show_status='1'")->order('wi_show.show_time desc')->limit(15)->select();
-        //print_r($shaidan);exit;
-        $this->assign('shaidan',$shaidan);
-        $this->display('Index/shaidan/index');
-    }
+    $shai = M('wi_show');
+    $shaidan = $shai->join('wi_user on wi_show.user_id=wi_user.user_id')->where("wi_show.show_status='1'")->order('wi_show.show_time desc')->limit(15)->select();
+    //print_r($shaidan);exit;
+    $this->assign('shaidan',$shaidan);
+    $this->display('Index/shaidan/index');
+}
 
 
     //心愿单
